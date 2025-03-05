@@ -2,10 +2,12 @@ import { useState } from "react";
 import { NavLink, Link, useLocation } from "react-router-dom";
 import { FaDownload, FaBars, FaTimes } from "react-icons/fa";
 import { motion, AnimatePresence } from "framer-motion";
+import logo from "../assets/logo.png"
 
 const Navbar = () => {
     const location = useLocation();
     const [isOpen, setIsOpen] = useState(false); // State for dropdown menu
+    console.log(logo);
 
     // Define navbar background based on the route
     const navbarBg = location.pathname === "/"
@@ -25,7 +27,8 @@ const Navbar = () => {
             <div className="container mx-auto px-6 py-4 flex justify-between items-center">
                 {/* Logo */}
                 <Link to="/" className="text-xl font-bold text-white transition-transform duration-200 hover:scale-105">
-                    SAM
+                   <img className="w-7 h-7" src={logo} alt="" />
+                   
                 </Link>
 
                 {/* Desktop Navigation */}

@@ -1,0 +1,9 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+#tsparticles {
+  position: absolute;
+  height: 100vh;
+  z-index: -1;
+}

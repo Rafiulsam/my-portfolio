@@ -28,7 +28,7 @@ const Navbar = () => {
             <div className="container mx-auto px-6 py-4 flex justify-between items-center">
                 {/* Logo */}
                 <Link to="/" className="text-xl font-bold text-white transition-transform duration-200 hover:scale-105">
-                    <img className="w-7 h-7" src={logo} alt="" />
+                    <img className="w-10 h-10" src={logo} alt="" />
 
                 </Link>
 
@@ -39,7 +39,7 @@ const Navbar = () => {
                             key={index}
                             to={path}
                             className={({ isActive }) =>
-                                `relative transition-transform duration-200 hover:-translate-y-1 hover:text-slate-200
+                                `text-xl relative transition-transform duration-200 hover:-translate-y-1 hover:text-slate-200
                                 after:absolute after:left-0 after:bottom-0 after:w-0 after:h-[2px] after:bg-white 
                                 after:transition-all after:duration-300 hover:after:w-full 
                                 ${isActive ? "text-white after:w-full font-bold" : "text-white"}`
@@ -51,11 +51,11 @@ const Navbar = () => {
                 </div>
 
                 {/* Resume Button */}
-                <div className="hidden md:flex items-center transition-transform duration-200 hover:-translate-y-1 hover:scale-105 hover:bg-black hover:bg-opacity-50 border px-3 text-white rounded-md">
+                <div className="hidden md:flex items-center transition-transform duration-200 hover:-translate-y-1 hover:scale-105 hover:bg-black hover:bg-opacity-50 border p-2 text-white font-semibold rounded-md">
                     <a href="/Sameer's_Resume.pdf" target="_blank" rel="noopener noreferrer">
                         Resume
                     </a>
-                    <FaDownload className="ml-2 h-3" />
+                    <FaDownload className="ml-2 h-5" />
                 </div>
 
                 {/* Hamburger Menu */}

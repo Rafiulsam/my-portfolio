@@ -26,7 +26,7 @@ const skills = [
 
 const Skill = () => {
     return (
-        <section id="skills" className="py-20 lg:h-screen">
+        <section id="skills" className="py-20 flex justify-center items-center lg:h-screen">
             <div className="container mx-auto px-6 text-center lg:flex justify-between items-center gap-10">
                 <div className='lg:w-1/3'>
                     <motion.h2

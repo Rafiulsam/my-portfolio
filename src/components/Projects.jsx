@@ -1,21 +1,37 @@
 import React from 'react';
 import { motion } from 'framer-motion';
+import { FaArrowUpRightFromSquare } from 'react-icons/fa6';
+import { FaGithub } from 'react-icons/fa';
+import { GoRepo } from 'react-icons/go';
 
 const projects = [
   {
-    title: 'Weather App',
-    description: 'A weather app using OpenWeather API.',
-    link: '#',
+    image: "/Flavors-of-india.jpg",
+    title: 'Flavors of India',
+    description: 'Flavors of India is a React-based web app showcasing India’s diverse cuisine.',
+    links: {
+      live: 'https://flavors-of-india.netlify.app/',
+      github: 'https://github.com/Rafiulsam/flavors-of-india-client',
+      server: 'https://github.com/Rafiulsam/Flavors_of_india_server',
+    },
   },
   {
+    image: "/E-baj.jpg",
     title: 'E-commerce Site',
-    description: 'A fully responsive e-commerce website.',
-    link: '#',
+    description: 'A simple e-commerce site build with React lets users browse products, add them to a cart, and check out.',
+    links:{
+      live: 'https://e-baj-app.netlify.app/',
+      github: 'https://github.com/Rafiulsam/e-baj-simple',
+    }
   },
   {
-    title: 'Personal Blog',
-    description: 'A blog built with Next.js and Markdown.',
-    link: '#',
+    image: "/BookNest.jpg",
+    title: 'Book Nest',
+    description: 'BookNest is a user-friendly online bookstore built with React, allowing users to easily browse and purchase books.',
+    links:{
+      live: 'https://booknest768.netlify.app/',
+      github: 'https://github.com/Rafiulsam/BookNest-react-route',
+    }
   },
 ];
 
@@ -26,22 +42,48 @@ const Projects = () => {
         <h2 className="text-3xl font-bold text-center text-gray-800">Projects</h2>
         <div className="mt-8 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
           {projects.map((project, index) => (
-            <motion.div
-              key={index}
-              initial={{ opacity: 0, y: 50 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.5, delay: index * 0.2 }}
-              className="bg-gray-100 p-6 rounded-lg shadow-lg"
-            >
-              <h3 className="text-xl font-bold text-gray-800">{project.title}</h3>
-              <p className="mt-2 text-gray-600">{project.description}</p>
-              <a
-                href={project.link}
-                className="mt-4 inline-block px-4 py-2 bg-red-700 text-white rounded-lg hover:bg-red-800"
+            <div key={index} className='transition-transform duration-200 hover:scale-105'>
+              <motion.div
+                initial={{ opacity: 0, y: 50 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.5, delay: index * 0.2 }}
+                className="bg-gray-100 p-6 rounded-lg shadow-xl shadow-red-400 h-96 flex flex-col justify-between"
               >
-                View Project
-              </a>
-            </motion.div>
+                {/* Image Container */}
+                <div className="relative w-full h-40">
+                  <img
+                    src={project.image}
+                    alt={project.title}
+                    className="w-full h-full object-cover rounded-lg"
+                  />
+
+                  <a href={project.links.live} target='_blank' className="absolute inset-0 bg-black bg-opacity-50 flex items-center justify-center opacity-0 hover:opacity-100 transition duration-300 rounded-lg">
+                    <FaArrowUpRightFromSquare className="text-red-400 text-3xl drop-shadow-[0_0_10px_rgba(255,0,0,0.8)]" />
+                  </a>
+                </div>
+
+                {/* Project Info */}
+                <h3 className="text-xl font-bold text-gray-800">{project.title}</h3>
+                <p className="text-sm mt-2 text-gray-600">{project.description}</p>
+                <div className='space-x-4'>
+                  <a
+                    href={project.links.github} target='_blank'
+                    className="mt-4 inline-flex items-center gap-2 px-4 py-2 bg-red-700 text-white rounded-lg hover:bg-red-800 font-semibold"
+                  >
+                    Client Side <GoRepo/>
+                  </a>
+                  {project.links.server && (
+                    <a
+                      href={project.links.server} target='_blank'
+                      className="mt-4 inline-flex items-center gap-2 px-4 py-2 bg-red-700 text-white rounded-lg hover:bg-red-800 font-semibold"
+                    >
+                      Server Side <GoRepo/>
+                    </a>
+                  )}
+                </div>
+
+              </motion.div>
+            </div>
           ))}
         </div>
       </div>

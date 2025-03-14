@@ -3,13 +3,15 @@ import { motion } from 'framer-motion';
 import { FaAt, FaLinkedin, FaGithub } from 'react-icons/fa';
 
 const Contact = () => {
+
     return (
-        <section id="contact" className="py-20 ">
+        <section id="contact" className="py-40">
             <div className="container mx-auto px-6">
                 <motion.h2
                     initial={{ opacity: 0, y: -50 }}
                     whileInView={{ opacity: 1, y: 0 }}
                     transition={{ duration: 0.5 }}
+                    viewport={{ once: true }}
                     className="text-3xl font-bold text-center text-gray-800"
                 >
                     Contact Me
@@ -18,6 +20,7 @@ const Contact = () => {
                     initial={{ opacity: 0, y: 50 }}
                     whileInView={{ opacity: 1, y: 0 }}
                     transition={{ duration: 0.5, delay: 0.2 }}
+                    viewport={{ once: true }}
                     className="mt-4 text-lg text-gray-600 text-center max-w-2xl mx-auto"
                 >
                     Have a question or want to work together? Feel free to reach out!
@@ -28,9 +31,13 @@ const Contact = () => {
                     initial={{ opacity: 0, y: 50 }}
                     whileInView={{ opacity: 1, y: 0 }}
                     transition={{ duration: 0.5, delay: 0.4 }}
-                    className="mt-8 p-8 rounded-lg shadow-xl shadow-red-400 max-w-2xl mx-auto "
+                    viewport={{ once: true }}
+                    className="mt-16 p-8 rounded-lg shadow-xl shadow-red-400 max-w-2xl mx-auto "
                 >
-                    <form>
+                    <form action="https://api.web3forms.com/submit"
+                        method="POST"
+                        >
+                             <input type="hidden" name="access_key" value="23d3c3fb-0bd7-47f8-97a3-f293a209fd42" />
                         <div className="mb-6">
                             <label htmlFor="name" className="block font-medium mb-2 text-red-700">
                                 Name
@@ -84,6 +91,7 @@ const Contact = () => {
                     initial={{ opacity: 0, y: 50 }}
                     whileInView={{ opacity: 1, y: 0 }}
                     transition={{ duration: 0.5, delay: 0.6 }}
+                    viewport={{ once: true }}
                     className="mt-12 text-center"
                 >
                     <h3 className="text-xl font-bold text-gray-800">Or reach out directly:</h3>

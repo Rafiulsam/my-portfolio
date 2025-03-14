@@ -6,7 +6,7 @@ import logo from "../assets/logo.png"
 
 const Navbar = () => {
     const location = useLocation();
-    
+
     // State for dropdown menu
     const [isOpen, setIsOpen] = useState(false);
 
@@ -17,7 +17,7 @@ const Navbar = () => {
 
     const navLinks = [
         { path: "/", label: "Home" },
-        { path: "/skills", label: "Skills" },
+        // { path: "/skills", label: "Skills" },
         { path: "/about", label: "About" },
         { path: "/projects", label: "Projects" },
         { path: "/contact", label: "Contact" },
@@ -73,7 +73,7 @@ const Navbar = () => {
                         initial={{ opacity: 0, y: -20 }}
                         animate={{ opacity: 1, y: 0 }}
                         exit={{ opacity: 0, y: -20 }}
-                        className="md:hidden absolute top-16 left-0 w-full bg-[#b61924] shadow-lg shadow-red-400 py-4"
+                        className="md:hidden flex flex-col items-center absolute top-16 right-0 bg-[#b61924]/60 backdrop-blur-md shadow-lg rounded-md border border-red-700 py-4"
                     >
                         {navLinks.map(({ path, label }, index) => (
                             <NavLink
@@ -88,8 +88,10 @@ const Navbar = () => {
 
                         {/* Mobile Resume Button */}
                         <div className="px-6 py-2">
-                            <a href="/Sameer's_Resume.pdf" target="_blank" rel="noopener noreferrer" className="block text-center border py-2 text-white rounded-md hover:bg-black hover:bg-opacity-50 transition">
-                                Resume <FaDownload className="inline ml-2 h-3" />
+                            <a href="/Sameer's_Resume.pdf" target="_blank" rel="noopener noreferrer" className="block text-center border px-2 text-white rounded-md hover:bg-black hover:bg-opacity-50 transition">
+                                <span className="flex items-center justify-center">
+                                    Resume  <FaDownload className="inline ml-2 h-3" />
+                                </span>
                             </a>
                         </div>
                     </motion.div>

@@ -6,7 +6,6 @@ import Projects from './components/Projects';
 import Contact from './components/Contact';
 import Navbar from './components/Navbar';
 import Footer from './components/Footer';
-import Skill from './components/Skill';
 import ScrollToTop from './components/ScrollToTop';
 
 function App() {
@@ -16,7 +15,6 @@ function App() {
       <ScrollToTop/>
       <Routes>
         <Route path="/" element={<Home />} />
-        <Route path="/skills" element={<Skill />} />
         <Route path="/about" element={<About />} />
         <Route path="/projects" element={<Projects />} />
         <Route path="/contact" element={<Contact />} />

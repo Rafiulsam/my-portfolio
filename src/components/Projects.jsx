@@ -1,7 +1,6 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 import { FaArrowUpRightFromSquare } from 'react-icons/fa6';
-import { FaGithub } from 'react-icons/fa';
 import { GoRepo } from 'react-icons/go';
 
 const projects = [
@@ -37,10 +36,10 @@ const projects = [
 
 const Projects = () => {
   return (
-    <section id="projects" className="py-20 bg-white lg:h-screen">
+    <section id="projects" className="py-40 bg-white lg:h-screen">
       <div className="container mx-auto px-6">
-        <h2 className="text-3xl font-bold text-center text-gray-800">Projects</h2>
-        <div className="mt-8 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+        <h2 className="text-4xl font-bold text-center text-gray-800">Projects</h2>
+        <div className="mt-20 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
           {projects.map((project, index) => (
             <div key={index} className='transition-transform duration-200 hover:scale-105'>
               <motion.div

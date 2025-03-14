@@ -5,7 +5,7 @@ import ParticlesBackground from './ParticlesBackground';
 
 const Home = () => {
     return (
-        <section id="home" className="container mx-auto min-h-screen px-12 flex flex-col md:flex-row items-center justify-center md:justify-between relative">
+        <section id="home" className="container mx-auto min-h-screen px-20 flex flex-col md:flex-row items-center justify-center md:justify-between relative">
              {/* Background Particles */}
              <ParticlesBackground />
             {/* Left Content */}
@@ -15,15 +15,16 @@ const Home = () => {
                 transition={{ duration: 1}}
                 className="text-center md:text-left"
             >
-                <h1 className="text-3xl md:text-6xl font-bold text-white">
-                    Hi, I'm <span className='text-gray-800'>Sam</span>eer
+                <h1 className='text-2xl md:text-4xl text-white'>Hello There!, I'm-</h1>
+                <h1 className="text-8xl md:text-[12rem] font-bold text-white">
+                     <span className='text-gray-900'>Sam</span>eer
                 </h1>
-                <p className="mt-4 text-white">
+                <p className="mt-4 md:text-xl px-8 md:p-0 text-white">
                     A passionate front-end developer building user-friendly web experiences.
                 </p>
                 <Link
                     to="/projects"
-                    className="mt-8 ml-[4px] inline-block px-6 py-3 font-semibold bg-black bg-opacity-50 hover:bg-opacity-70 text-white rounded-lg"
+                    className="mt-8 md:ml-[4px] inline-block px-6 py-3 font-semibold bg-black bg-opacity-50 hover:bg-opacity-70 text-white rounded-lg"
                 >
                     View My Work
                 </Link>

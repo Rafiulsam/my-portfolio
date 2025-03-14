@@ -26,21 +26,23 @@ const skills = [
 
 const Skill = () => {
     return (
-        <section id="skills" className="py-20 flex justify-center items-center lg:h-screen">
-            <div className="container mx-auto px-6 text-center lg:flex justify-between items-center gap-10">
+        <section id="skills" className="flex justify-center items-center lg:h-screen">
+            <div className="mx-auto text-center lg:flex justify-between items-center gap-10">
                 <div className='lg:w-1/3'>
                     <motion.h2
-                        initial={{ opacity: 0, y: -50 }}
-                        whileInView={{ opacity: 1, y: 0 }}
+                        initial={{ opacity: 0, x: -50 }}
+                        whileInView={{ opacity: 1, x: 0 }}
                         transition={{ duration: 0.5 }}
+                        viewport={{ once: true }}
                         className="text-3xl font-bold text-center text-gray-800"
                     >
                         Skills
                     </motion.h2>
                     <motion.p
-                        initial={{ opacity: 0, y: 50 }}
-                        whileInView={{ opacity: 1, y: 0 }}
+                        initial={{ opacity: 0, x: -50 }}
+                        whileInView={{ opacity: 1, x: 0 }}
                         transition={{ duration: 0.5, delay: 0.2 }}
+                        viewport={{ once: true }}
                         className="mt-4 text-lg text-gray-600 text-center max-w-2xl mx-auto px-10"
                     >
                         Here are some of the skills I've acquired over the years. <span className='font-semibold text-red-700'>I'm always learning and improving!</span>
@@ -54,11 +56,13 @@ const Skill = () => {
                                 initial={{ opacity: 0, y: 50 }}
                                 whileInView={{ opacity: 1, y: 0 }}
                                 transition={{ duration: 0.5, delay: index * 0.2 }}
+                                viewport={{ once: true }}
                                 className="bg-white p-6 rounded-lg shadow-xl shadow-red-400"
                             >
                                 <motion.div
                                     animate={{ y: [0, 10, 0] }}
                                     transition={{ repeat: Infinity, duration: 1 }}
+                                    viewport={{ once: true }}
                                     className='flex items-center justify-center'
                                 >
                                     {skill.icon}
@@ -70,6 +74,7 @@ const Skill = () => {
                                             initial={{ width: 0 }}
                                             whileInView={{ width: `${skill.level}%` }}
                                             transition={{ duration: 1, delay: index * 0.2 }}
+                                            viewport={{ once: true }}
                                             className="h-2.5 rounded-full bg-red-700"
                                         />
                                     </div>

@@ -6,18 +6,18 @@ import ParticlesBackground from './ParticlesBackground';
 const Home = () => {
     return (
         <section id="home" className="container mx-auto min-h-screen px-20 flex flex-col md:flex-row items-center justify-center md:justify-between relative">
-             {/* Background Particles */}
-             <ParticlesBackground />
+            {/* Background Particles */}
+            <ParticlesBackground />
             {/* Left Content */}
             <motion.div
                 initial={{ opacity: 0, y: -50 }}
                 animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 1}}
+                transition={{ duration: 1 }}
                 className="mt-10 text-center md:text-left"
             >
                 <h1 className='text-2xl lg:text-4xl text-white'>Hello There!, I'm-</h1>
                 <h1 className="text-8xl lg:text-[12rem] font-bold text-white">
-                     <span className='text-gray-900'>Sam</span>eer
+                    <span className='text-gray-900'>Sam</span>eer
                 </h1>
                 <p className="mt-4 lg:text-xl px-8 md:p-0 text-white">
                     A passionate front-end developer building user-friendly web experiences.

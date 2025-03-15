@@ -1,20 +1,37 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { motion } from 'framer-motion';
 import { Link } from 'react-router-dom';
-import Skill from './Skill';
 
 const About = () => {
+  const [cursorPosition, setCursorPosition] = useState({ x: 0, y: 0 });
+  const [isHovering, setIsHovering] = useState(false);
+
+  const handleMouseMove = (e) => {
+    const { left, top } = e.target.getBoundingClientRect();
+    const x = e.clientX - left;
+    const y = e.clientY - top;
+
+    setCursorPosition({ x, y });
+  };
+
+  const handleMouseEnter = () => {
+    setIsHovering(true);
+  };
+
+  const handleMouseLeave = () => {
+    setIsHovering(false);
+  };
+
   return (
-    <div className='container mx-auto px-6'>
+    <section className="container mx-auto px-6 lg:flex lg:justify-between gap-5 lg:items-center lg:mt-40 lg:mb-20">
       {/* About */}
-      <section id="about" className="py-52 lg:pt-80 flex justify-center items-center">
-        <div className="mx-auto px-6">
+        <div className="mx-auto px-6 text-center lg:text-left ">
           <motion.h2
             initial={{ opacity: 0, y: -50 }}
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5 }}
             viewport={{ once: true }}
-            className="text-2xl lg:text-4xl font-bold text-center text-gray-800"
+            className="text-2xl lg:text-6xl font-bold text-gray-800 "
           >
             About Me
           </motion.h2>
@@ -23,16 +40,16 @@ const About = () => {
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5, delay: 0.2 }}
             viewport={{ once: true }}
-            className="mt-6 lg:text-2xl text-gray-600 max-w-4xl mx-auto text-center"
+            className="mt-6 lg:text-2xl text-gray-600 max-w-4xl mx-auto"
           >
-            Hi, I'm Rafiul Islam Sameer, a passionate front-end developer with a love for creating beautiful and functional web experiences. I specialize in building responsive, user-friendly websites using modern technologies like React, Tailwind CSS, and JavaScript. When I'm not coding, you can find me exploring new design trends or contributing to open-source projects.
+            Hi, I'm <span className='text-red-700 font-semibold'>Rafiul Islam Sameer</span>, a passionate front-end developer with a love for creating beautiful and functional web experiences. I specialize in building responsive, user-friendly websites using modern technologies like React, Tailwind CSS, and JavaScript. When I'm not coding, I enjoy <span className='text-red-700 font-semibold'>exploring arts</span> or <span className='text-red-700 font-semibold'>traveling</span>.
           </motion.p>
           <motion.div
             initial={{ opacity: 0, y: 50 }}
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5, delay: 0.4 }}
             viewport={{ once: true }}
-            className="mt-8 flex justify-center space-x-4"
+            className="mt-8 flex justify-center lg:justify-start space-x-4"
           >
             <Link
               to="/projects"
@@ -47,24 +64,44 @@ const About = () => {
               Contact Me
             </Link>
           </motion.div>
+        </div >
+    {/* Image container */}
+      <div
+        className="hidden md:block w-1/2"
+        onMouseMove={handleMouseMove}
+        onMouseEnter={handleMouseEnter}
+        onMouseLeave={handleMouseLeave}
+      >
+        <div className="relative">
+          {/* image */}
+          <motion.img
+            initial={{ opacity: 0, x: 50 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            transition={{ duration: 0.5, delay: 0.6 }}
+            viewport={{ once: true }}
+            src="my-picture.jpg"
+            alt="coding"
+            className="rounded-lg shadow-xl w-full"
+          />
+
+          {/* Invert Mask */}
+          {isHovering && (
+            <div
+              className="absolute pointer-events-none"
+              style={{
+                left: `${cursorPosition.x - 75}px`,
+                top: `${cursorPosition.y - 75}px`,
+                width: '200px',
+                height: '200px',
+                borderRadius: '50%',
+                background: 'white',
+                mixBlendMode: 'hue',
+              }}
+            />
+          )}
         </div>
-
-        {/* <div className="hidden md:block w-1/2">
-        <motion.img
-          initial={{ opacity: 0, x: 50 }}
-          whileInView={{ opacity: 1, x: 0 }}
-          transition={{ duration: 0.5, delay: 0.6 }}
-          viewport={{ once: true }}
-          src=""
-          alt="coding"
-          className="rounded-lg shadow-xl"
-        />
-        </div> */}
-      </section>
-
-      {/* Skills */}
-          <Skill />
-    </div>
+      </div>
+    </section >
   );
 };
 

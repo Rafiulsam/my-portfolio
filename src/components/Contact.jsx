@@ -23,7 +23,7 @@ const Contact = () => {
                     viewport={{ once: true }}
                     className="mt-4 text-lg text-gray-600 text-center max-w-2xl mx-auto"
                 >
-                    Have a question or want to work together? Feel free to reach out!
+                    Have a question or want to work together? <span className='font-semibold text-red-700'>Feel free to reach out!</span>
                 </motion.p>
 
                 {/* Contact Form */}
@@ -100,7 +100,7 @@ const Contact = () => {
                             href="https://mail.google.com/mail/?view=cm&to=rafiulsam69@gmail.com"
                             target="_blank"
                             rel="noopener noreferrer"
-                            className="text-red-700 hover:text-red-800"
+                            className="transition-transform duration-200 hover:scale-110 text-red-700 hover:text-red-800"
                             aria-label="Send an email"
                         >
                             <FaAt className="w-8 h-8" />
@@ -109,7 +109,7 @@ const Contact = () => {
                             href="https://linkedin.com/in/rafiul-sameer-0683b82a3"
                             target="_blank"
                             rel="noopener noreferrer"
-                            className="text-red-700 hover:text-red-800"
+                            className="transition-transform duration-200 hover:scale-110 text-red-700 hover:text-red-800"
                         >
                             <FaLinkedin className="w-8 h-8" />
                         </a>
@@ -117,7 +117,7 @@ const Contact = () => {
                             href="https://github.com/Rafiulsam"
                             target="_blank"
                             rel="noopener noreferrer"
-                            className="text-red-700 hover:text-red-800"
+                            className="transition-transform duration-200 hover:scale-110 text-red-700 hover:text-red-800"
                         >
                             <FaGithub className="w-8 h-8" />
                         </a>

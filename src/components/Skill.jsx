@@ -26,15 +26,15 @@ const skills = [
 
 const Skill = () => {
     return (
-        <section id="skills" className="flex justify-center items-center lg:h-screen">
-            <div className="mx-auto text-center lg:flex justify-between items-center gap-10">
+        <section className=" pt-20 px-10 flex justify-center items-center lg:h-screen">
+            <div className="mx-auto  lg:flex justify-between items-center gap-10">
                 <div className='lg:w-1/3'>
                     <motion.h2
                         initial={{ opacity: 0, x: -50 }}
                         whileInView={{ opacity: 1, x: 0 }}
                         transition={{ duration: 0.5 }}
                         viewport={{ once: true }}
-                        className="text-3xl font-bold text-center text-gray-800"
+                        className="text-6xl font-bold text-gray-800"
                     >
                         Skills
                     </motion.h2>
@@ -43,13 +43,13 @@ const Skill = () => {
                         whileInView={{ opacity: 1, x: 0 }}
                         transition={{ duration: 0.5, delay: 0.2 }}
                         viewport={{ once: true }}
-                        className="mt-4 text-lg text-gray-600 text-center max-w-2xl mx-auto px-10"
+                        className="mt-4 text-lg text-gray-600  max-w-2xl mx-auto pr-10"
                     >
                         Here are some of the skills I've acquired over the years. <span className='font-semibold text-red-700'>I'm always learning and improving!</span>
                     </motion.p>
                 </div>
                 {/* skills container */}
-                <div className="my-12 grid grid-cols-2 lg:grid-cols-4 gap-8 grow ">
+                <div className="my-12 grid grid-cols-2 lg:grid-cols-4 gap-8 grow text-center">
                     {skills.map((skill, index) => (
                         <div key={index} className='transition-transform duration-200 hover:scale-110'>
                             <motion.div

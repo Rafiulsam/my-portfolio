@@ -36,10 +36,8 @@ const projects = [
 
 const Projects = () => {
   return (
-    <section className="mt-40 mb-20 bg-white lg:h-screen">
+    <section className="pt-32 mb-20 bg-white lg:h-screen">
       <div className="container mx-auto px-6">
-        {/* <h2 className="text-4xl font-bold text-center text-gray-800">Projects</h2>
-        <p className='text-center mt-3'>Here are a few projects I've created <span>throughout my learning phase.</span></p> */}
         <motion.h2
           initial={{ opacity: 0, x: -50 }}
           whileInView={{ opacity: 1, x: 0 }}
@@ -58,7 +56,7 @@ const Projects = () => {
         >
          Here are some projects I've developed <span className='font-semibold text-red-700'>during my learning journey.</span>
         </motion.p>
-        <div className="mt-20 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+        <div className="mt-10 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
           {projects.map((project, index) => (
             <div key={index} className='transition-transform duration-200 hover:scale-105'>
               <motion.div

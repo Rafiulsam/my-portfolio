@@ -12,7 +12,7 @@ const Footer = () => {
 
   return (
     <footer className={`${textColor} py-6`}>
-      <div className="container mx-auto flex justify-between items-center">
+      <div className="px-10 mx-auto flex flex-col md:flex-row gap-4 justify-between items-center">
         <div className="flex space-x-6">
           <a
             href="https://mail.google.com/mail/?view=cm&to=rafiulsam69@gmail.com"
@@ -37,7 +37,7 @@ const Footer = () => {
             <FaGithub className="w-6 h-6" />
           </a>
         </div>
-        <div className='text-end text-xs'>
+        <div className='text-center md:text-end'>
           <p>&copy; {new Date().getFullYear()} Sameer. All rights reserved.</p>
           <p>
             Designed by Novera <span>•</span> Developed by Sameer

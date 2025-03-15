@@ -73,7 +73,7 @@ const Navbar = () => {
                         initial={{ opacity: 0, y: -20 }}
                         animate={{ opacity: 1, y: 0 }}
                         exit={{ opacity: 0, y: -20 }}
-                        className="md:hidden flex flex-col items-center absolute top-16 right-0 bg-[#b61924]/60 backdrop-blur-md shadow-lg rounded-md border border-red-700 py-4"
+                        className="md:hidden flex flex-col items-center absolute top-16 right-0 bg-[#b61924]/60 backdrop-blur-lg shadow-lg rounded-md border border-red-700 py-4"
                     >
                         {navLinks.map(({ path, label }, index) => (
                             <NavLink

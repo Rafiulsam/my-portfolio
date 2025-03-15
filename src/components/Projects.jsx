@@ -18,7 +18,7 @@ const projects = [
     image: "/E-baj.jpg",
     title: 'E-commerce Site',
     description: 'A simple e-commerce site build with React lets users browse products, add them to a cart, and check out.',
-    links:{
+    links: {
       live: 'https://e-baj-app.netlify.app/',
       github: 'https://github.com/Rafiulsam/e-baj-simple',
     }
@@ -27,7 +27,7 @@ const projects = [
     image: "/BookNest.jpg",
     title: 'Book Nest',
     description: 'BookNest is a user-friendly online bookstore built with React, allowing users to easily browse and purchase books.',
-    links:{
+    links: {
       live: 'https://booknest768.netlify.app/',
       github: 'https://github.com/Rafiulsam/BookNest-react-route',
     }
@@ -36,9 +36,28 @@ const projects = [
 
 const Projects = () => {
   return (
-    <section id="projects" className="py-40 bg-white lg:h-screen">
+    <section className="mt-40 mb-20 bg-white lg:h-screen">
       <div className="container mx-auto px-6">
-        <h2 className="text-4xl font-bold text-center text-gray-800">Projects</h2>
+        {/* <h2 className="text-4xl font-bold text-center text-gray-800">Projects</h2>
+        <p className='text-center mt-3'>Here are a few projects I've created <span>throughout my learning phase.</span></p> */}
+        <motion.h2
+          initial={{ opacity: 0, x: -50 }}
+          whileInView={{ opacity: 1, x: 0 }}
+          transition={{ duration: 0.5 }}
+          viewport={{ once: true }}
+          className="text-3xl font-bold text-center text-gray-800"
+        >
+          Projects
+        </motion.h2>
+        <motion.p
+          initial={{ opacity: 0, x: -50 }}
+          whileInView={{ opacity: 1, x: 0 }}
+          transition={{ duration: 0.5, delay: 0.2 }}
+          viewport={{ once: true }}
+          className="mt-4 text-lg text-gray-600 text-center max-w-2xl mx-auto px-10"
+        >
+         Here are some projects I've developed <span className='font-semibold text-red-700'>during my learning journey.</span>
+        </motion.p>
         <div className="mt-20 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
           {projects.map((project, index) => (
             <div key={index} className='transition-transform duration-200 hover:scale-105'>
@@ -69,14 +88,14 @@ const Projects = () => {
                     href={project.links.github} target='_blank'
                     className="mt-4 inline-flex items-center gap-2 px-4 py-2 bg-red-700 text-white rounded-lg hover:bg-red-800 font-semibold"
                   >
-                    Client Side <GoRepo/>
+                    Client Side <GoRepo />
                   </a>
                   {project.links.server && (
                     <a
                       href={project.links.server} target='_blank'
                       className="mt-4 inline-flex items-center gap-2 px-4 py-2 bg-red-700 text-white rounded-lg hover:bg-red-800 font-semibold"
                     >
-                      Server Side <GoRepo/>
+                      Server Side <GoRepo />
                     </a>
                   )}
                 </div>

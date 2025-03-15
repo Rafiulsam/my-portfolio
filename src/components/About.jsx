@@ -36,7 +36,7 @@ const About = () => {
           >
             <Link
               to="/projects"
-              className="px-6 py-3 font-semibold bg-red-700 text-white rounded-lg hover:bg-red-800"
+              className="px-3 md:px-6 py-3 font-semibold bg-red-700 text-white rounded-lg hover:bg-red-800"
             >
               View My Work
             </Link>

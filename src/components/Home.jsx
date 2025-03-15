@@ -13,13 +13,13 @@ const Home = () => {
                 initial={{ opacity: 0, y: -50 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 1}}
-                className="text-center md:text-left"
+                className="mt-10 text-center md:text-left"
             >
-                <h1 className='text-2xl md:text-4xl text-white'>Hello There!, I'm-</h1>
-                <h1 className="text-8xl md:text-[12rem] font-bold text-white">
+                <h1 className='text-2xl lg:text-4xl text-white'>Hello There!, I'm-</h1>
+                <h1 className="text-8xl lg:text-[12rem] font-bold text-white">
                      <span className='text-gray-900'>Sam</span>eer
                 </h1>
-                <p className="mt-4 md:text-xl px-8 md:p-0 text-white">
+                <p className="mt-4 lg:text-xl px-8 md:p-0 text-white">
                     A passionate front-end developer building user-friendly web experiences.
                 </p>
                 <Link

@@ -25,49 +25,52 @@ const About = () => {
   return (
     <section className="container mx-auto px-6 lg:flex lg:justify-between gap-5 lg:items-center lg:mt-40 lg:mb-20">
       {/* About */}
-        <div className="mx-auto px-6 text-center lg:text-left ">
-          <motion.h2
-            initial={{ opacity: 0, y: -50 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.5 }}
-            viewport={{ once: true }}
-            className="text-2xl lg:text-6xl font-bold text-gray-800 "
+      <div className="mx-auto px-6 text-center lg:text-left ">
+        <motion.h2
+          initial={{ opacity: 0, y: -50 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.5 }}
+          viewport={{ once: true }}
+          className="text-2xl lg:text-6xl font-bold text-gray-800 "
+        >
+          About Me
+        </motion.h2>
+        <motion.p
+          initial={{ opacity: 0, y: 50 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.5, delay: 0.2 }}
+          viewport={{ once: true }}
+          className="mt-6 lg:text-2xl text-gray-600 max-w-4xl mx-auto"
+        >
+          Hey, I'm <span className='text-red-700 font-semibold'>Rafiul Islam Sameer</span>, a front-end developer with a passion for crafting beautiful and functional web experiences. I enjoy turning ideas into reality and making websites that are smooth and user-friendly. 
+          <br/>
+          <br />
+          When I'm not busy coding, you'll find me <span className='text-red-700 font-semibold'>exploring my love for art</span> or <span className='text-red-700 font-semibold'>traveling to exciting places.</span>
+        </motion.p>
+        <motion.div
+          initial={{ opacity: 0, y: 50 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.5, delay: 0.4 }}
+          viewport={{ once: true }}
+          className="mt-8 flex justify-center lg:justify-start space-x-4"
+        >
+          <Link
+            to="/projects"
+            className="px-3 md:px-6 py-3 font-semibold bg-red-700 text-white rounded-lg hover:bg-red-800"
           >
-            About Me
-          </motion.h2>
-          <motion.p
-            initial={{ opacity: 0, y: 50 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.5, delay: 0.2 }}
-            viewport={{ once: true }}
-            className="mt-6 lg:text-2xl text-gray-600 max-w-4xl mx-auto"
+            View My Work
+          </Link>
+          <Link
+            to="/contact"
+            className="px-6 py-3 bg-gray-800 font-semibold text-white rounded-lg hover:bg-gray-900"
           >
-            Hi, I'm <span className='text-red-700 font-semibold'>Rafiul Islam Sameer</span>, a passionate front-end developer with a love for creating beautiful and functional web experiences. I specialize in building responsive, user-friendly websites using modern technologies like React, Tailwind CSS, and JavaScript. When I'm not coding, I enjoy <span className='text-red-700 font-semibold'>exploring arts</span> or <span className='text-red-700 font-semibold'>traveling</span>.
-          </motion.p>
-          <motion.div
-            initial={{ opacity: 0, y: 50 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.5, delay: 0.4 }}
-            viewport={{ once: true }}
-            className="mt-8 flex justify-center lg:justify-start space-x-4"
-          >
-            <Link
-              to="/projects"
-              className="px-3 md:px-6 py-3 font-semibold bg-red-700 text-white rounded-lg hover:bg-red-800"
-            >
-              View My Work
-            </Link>
-            <Link
-              to="/contact"
-              className="px-6 py-3 bg-gray-800 font-semibold text-white rounded-lg hover:bg-gray-900"
-            >
-              Contact Me
-            </Link>
-          </motion.div>
-        </div >
-    {/* Image container */}
+            Contact Me
+          </Link>
+        </motion.div>
+      </div >
+      {/* Image container */}
       <div
-        className="hidden md:block w-1/2"
+        className="hidden md:block w-1/2 "
         onMouseMove={handleMouseMove}
         onMouseEnter={handleMouseEnter}
         onMouseLeave={handleMouseLeave}
@@ -81,7 +84,7 @@ const About = () => {
             viewport={{ once: true }}
             src="my-picture.jpg"
             alt="coding"
-            className="rounded-lg shadow-xl w-full"
+            className="rounded-lg w-full"
           />
 
           {/* Invert Mask */}

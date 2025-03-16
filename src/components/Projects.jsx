@@ -9,7 +9,7 @@ const projects = [
     title: 'Flavors of India',
     description: 'Flavors of India is a React-based web app showcasing India’s diverse cuisine.',
     links: {
-      live: 'https://flavors-of-india.netlify.app/',
+      live: 'https://flavors-of-india-d6dbf.web.app/',
       github: 'https://github.com/Rafiulsam/flavors-of-india-client',
       server: 'https://github.com/Rafiulsam/Flavors_of_india_server',
     },
@@ -54,9 +54,11 @@ const Projects = () => {
           viewport={{ once: true }}
           className="mt-4 text-lg text-gray-600 text-center max-w-2xl mx-auto px-10"
         >
-         Here are some projects I've developed <span className='font-semibold text-red-700'>during my learning journey.</span>
+          Here are some projects I've developed <span className='font-semibold text-red-700'>during my learning journey.</span>
         </motion.p>
         <div className="mt-10 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+
+          {/* Projects Container */}
           {projects.map((project, index) => (
             <div key={index} className='transition-transform duration-200 hover:scale-105'>
               <motion.div

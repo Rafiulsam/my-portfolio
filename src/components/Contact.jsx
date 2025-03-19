@@ -27,64 +27,69 @@ const Contact = () => {
                 </motion.p>
 
                 {/* Contact Form */}
-                <motion.div
-                    initial={{ opacity: 0, y: 50 }}
-                    whileInView={{ opacity: 1, y: 0 }}
-                    transition={{ duration: 0.5, delay: 0.4 }}
-                    viewport={{ once: true }}
-                    className="mt-16 p-8 rounded-lg shadow-xl shadow-red-400 max-w-2xl mx-auto "
-                >
-                    <form action="https://api.web3forms.com/submit"
-                        method="POST"
+                <div className='flex flex-col-reverse md:flex-row gap-10 max-w-7xl mx-auto justify-evenly items-center mt-16'>
+                    <motion.div
+                        initial={{ opacity: 0, y: 50 }}
+                        whileInView={{ opacity: 1, y: 0 }}
+                        transition={{ duration: 0.5, delay: 0.4 }}
+                        viewport={{ once: true }}
+                        className="p-8 rounded-lg shadow-xl shadow-red-400 lg:w-2/5 lg:mx-10"
+                    >
+                        <form action="https://api.web3forms.com/submit"
+                            method="POST"
                         >
-                             <input type="hidden" name="access_key" value="23d3c3fb-0bd7-47f8-97a3-f293a209fd42" />
-                        <div className="mb-6">
-                            <label htmlFor="name" className="block font-medium mb-2 text-red-700">
-                                Name
-                            </label>
-                            <input
-                                type="text"
-                                id="name"
-                                name="name"
-                                placeholder="Your Name"
-                                className="w-full px-4 py-2  border-b border-red-300 focus:outline-none focus:ring-2 focus:ring-red-700"
-                                required
-                            />
-                        </div>
-                        <div className="mb-6">
-                            <label htmlFor="email" className="block font-medium mb-2 text-red-700">
-                                Email
-                            </label>
-                            <input
-                                type="email"
-                                id="email"
-                                name="email"
-                                placeholder="your.email@example.com"
-                                className="w-full px-4 py-2 border-b border-red-300 focus:outline-none focus:ring-2 focus:ring-red-700"
-                                required
-                            />
-                        </div>
-                        <div className="mb-6">
-                            <label htmlFor="message" className="block font-medium mb-2 text-red-700">
-                                Message
-                            </label>
-                            <textarea
-                                id="message"
-                                name="message"
-                                rows="3"
-                                placeholder="Your message..."
-                                className="w-full px-4 py-2 border-b border-red-300 focus:outline-none focus:ring-2 focus:ring-red-700"
-                                required
-                            ></textarea>
-                        </div>
-                        <button
-                            type="submit"
-                            className="w-full px-6 py-3 bg-[#b61924] text-white rounded-lg hover:bg-red-800 focus:outline-none focus:ring-2 focus:ring-black"
-                        >
-                            Send Message
-                        </button>
-                    </form>
-                </motion.div>
+                            <input type="hidden" name="access_key" value="23d3c3fb-0bd7-47f8-97a3-f293a209fd42" />
+                            <div className="mb-6">
+                                <label htmlFor="name" className="block font-medium mb-2 text-red-700">
+                                    Name
+                                </label>
+                                <input
+                                    type="text"
+                                    id="name"
+                                    name="name"
+                                    placeholder="Your Name"
+                                    className="w-full px-4 py-2  border-b border-red-300 focus:outline-none focus:ring-2 focus:ring-red-700"
+                                    required
+                                />
+                            </div>
+                            <div className="mb-6">
+                                <label htmlFor="email" className="block font-medium mb-2 text-red-700">
+                                    Email
+                                </label>
+                                <input
+                                    type="email"
+                                    id="email"
+                                    name="email"
+                                    placeholder="Your.email@example.com"
+                                    className="w-full px-4 py-2 border-b border-red-300 focus:outline-none focus:ring-2 focus:ring-red-700"
+                                    required
+                                />
+                            </div>
+                            <div className="mb-6">
+                                <label htmlFor="message" className="block font-medium mb-2 text-red-700">
+                                    Message
+                                </label>
+                                <textarea
+                                    id="message"
+                                    name="message"
+                                    rows="3"
+                                    placeholder="Your message..."
+                                    className="w-full px-4 py-2 border-b border-red-300 focus:outline-none focus:ring-2 focus:ring-red-700"
+                                    required
+                                ></textarea>
+                            </div>
+                            <button
+                                type="submit"
+                                className="w-full px-6 py-3 bg-[#b61924] text-white rounded-lg hover:bg-red-800 focus:outline-none focus:ring-2 focus:ring-black"
+                            >
+                                Send Message
+                            </button>
+                        </form>
+                    </motion.div>
+                    <div>
+                        <img className='h-40 md:h-96' src={'/mailbox.png'} alt="" />
+                    </div>
+                </div>
 
                 {/* Additional Contact Info */}
                 <motion.div

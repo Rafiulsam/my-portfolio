@@ -2,6 +2,7 @@ import React from 'react';
 import { motion } from 'framer-motion';
 import { Link } from 'react-router-dom';
 import ParticlesBackground from './ParticlesBackground';
+import Loader from './Loader';
 
 const Home = () => {
     return (
@@ -17,7 +18,7 @@ const Home = () => {
             >
                 <h1 className='text-2xl lg:text-4xl text-white'>Hello There!, I'm-</h1>
                 <h1 className="text-8xl lg:text-[12rem] font-bold text-white">
-                    <span className='text-gray-900'>Sam</span>eer
+                    <i><span className='text-gray-900'>Sam</span>eer</i>
                 </h1>
                 <p className="mt-4 lg:text-xl px-8 md:p-0 text-white">
                     A passionate front-end developer building user-friendly web experiences.

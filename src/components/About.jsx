@@ -25,7 +25,7 @@ const About = () => {
   return (
     <section className="container mx-auto px-6 lg:flex lg:justify-between gap-5 lg:items-center lg:mt-40 lg:mb-20">
       {/* About */}
-      <div className="mx-auto px-6 text-center lg:text-left ">
+      <div className="mx-auto py-52 px-6 text-center lg:text-left ">
         <motion.h2
           initial={{ opacity: 0, y: -50 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -80,9 +80,9 @@ const About = () => {
           <motion.img
             initial={{ opacity: 0, x: 50 }}
             whileInView={{ opacity: 1, x: 0 }}
-            transition={{ duration: 0.5, delay: 0.6 }}
+            transition={{ duration: 0.5, delay: 0.4 }}
             viewport={{ once: true }}
-            src="my-picture.jpg"
+            src="my-picture.jpeg"
             alt="coding"
             className="rounded-lg w-full"
           />

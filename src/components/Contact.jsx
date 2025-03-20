@@ -86,9 +86,14 @@ const Contact = () => {
                             </button>
                         </form>
                     </motion.div>
-                    <div>
+                    <motion.div
+                     initial={{ opacity: 0, x: 50 }}
+                     whileInView={{ opacity: 1, x: 0 }}
+                     transition={{ duration: 0.5, delay: 0.4 }}
+                     viewport={{ once: true }}
+                    >
                         <img className='h-40 md:h-96' src={'/mailbox.png'} alt="" />
-                    </div>
+                    </motion.div>
                 </div>
 
                 {/* Additional Contact Info */}
@@ -102,7 +107,7 @@ const Contact = () => {
                     <h3 className="text-xl font-bold text-gray-800">Or reach out directly:</h3>
                     <div className="mt-4 flex justify-center space-x-6">
                         <a
-                            href="https://mail.google.com/mail/?view=cm&to=rafiulsam69@gmail.com"
+                            href="mailto:mailto:your.email@example.com"
                             target="_blank"
                             rel="noopener noreferrer"
                             className="transition-transform duration-200 hover:scale-110 text-red-700 hover:text-red-800"

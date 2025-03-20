@@ -15,7 +15,7 @@ const Footer = () => {
       <div className="px-10 mx-auto flex flex-col md:flex-row gap-4 justify-between items-center">
         <div className="flex space-x-6">
           <a
-            href="https://mail.google.com/mail/?view=cm&to=rafiulsam69@gmail.com"
+            href="mailto:rafiulsam69@gmail"
             target="_blank"
             rel="noopener noreferrer"
             aria-label="Send an email"

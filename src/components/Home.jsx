@@ -2,11 +2,10 @@ import React from 'react';
 import { motion } from 'framer-motion';
 import { Link } from 'react-router-dom';
 import ParticlesBackground from './ParticlesBackground';
-import Loader from './Loader';
 
 const Home = () => {
     return (
-        <section id="home" className="container mx-auto min-h-screen px-20 flex flex-col md:flex-row items-center justify-center md:justify-between relative">
+        <section id="home" className="container mx-auto min-h-screen px-10 flex flex-col md:flex-row items-center justify-center md:justify-between relative">
             {/* Background Particles */}
             <ParticlesBackground />
             {/* Left Content */}
@@ -18,7 +17,7 @@ const Home = () => {
             >
                 <h1 className='text-2xl lg:text-4xl text-white'>Hello There!, I'm-</h1>
                 <h1 className="text-8xl lg:text-[12rem] font-bold text-white">
-                    <i><span className='text-gray-900'>Sam</span>eer</i>
+                    <i><span className='text-black'>Sam</span>eer</i>
                 </h1>
                 <p className="mt-4 lg:text-xl px-8 md:p-0 text-white">
                     A passionate front-end developer building user-friendly web experiences.
@@ -32,14 +31,15 @@ const Home = () => {
             </motion.div>
 
             {/* Right Image */}
-            {/* <motion.div
+            <motion.div
                 initial={{ opacity: 0, y: 0 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 1 }}
-                className="mt-10 md:mt-0"
+                // whileHover={{ scale: 1.1 }}
+                className="mt-10 md:mt-0 p-5 md:w-[28rem]"
             >
-                <img src="/banner_pic.png" alt="Banner" className="w-64 md:w-full" />
-            </motion.div> */}
+                <img src="/banner_pic.png" alt="Banner" className="w-64 md:w-full  p-3" />
+            </motion.div>
         </section>
     );
 };

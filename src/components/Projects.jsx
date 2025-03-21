@@ -82,7 +82,7 @@ const Projects = () => {
 
                 {/* Project Info */}
                 <h3 className="text-xl font-bold text-gray-800">{project.title}</h3>
-                <p className="text-sm mt-2 text-gray-600">{project.description}</p>
+                <p className="mt-2 text-gray-600">{project.description}</p>
                 <div className='space-x-4'>
                   <a
                     href={project.links.github} target='_blank'

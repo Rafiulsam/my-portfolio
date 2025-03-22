@@ -6,7 +6,7 @@ const Contact = () => {
 
     return (
         <section id="contact" className="py-40">
-            <div className="container mx-auto px-6">
+            <div className="container mx-auto">
                 <motion.h2
                     initial={{ opacity: 0, y: -50 }}
                     whileInView={{ opacity: 1, y: 0 }}
@@ -21,19 +21,19 @@ const Contact = () => {
                     whileInView={{ opacity: 1, y: 0 }}
                     transition={{ duration: 0.5, delay: 0.2 }}
                     viewport={{ once: true }}
-                    className="mt-4 text-lg text-gray-600 text-center max-w-2xl mx-auto"
+                    className="mt-4 text-lg text-gray-600 text-center max-w-2xl mx-auto px-8"
                 >
                     Have a question or want to work together? <span className='font-semibold text-red-700'>Feel free to reach out!</span>
                 </motion.p>
 
                 {/* Contact Form */}
-                <div className='flex flex-col-reverse md:flex-row gap-10 max-w-7xl mx-auto justify-evenly items-center mt-16'>
+                <div className='flex flex-col-reverse md:flex-row  max-w-7xl mx-auto justify-evenly items-center mt-16'>
                     <motion.div
                         initial={{ opacity: 0, y: 50 }}
                         whileInView={{ opacity: 1, y: 0 }}
                         transition={{ duration: 0.5, delay: 0.4 }}
                         viewport={{ once: true }}
-                        className="p-8 rounded-lg shadow-xl shadow-red-400 lg:w-2/5 lg:mx-10"
+                        className="p-8 rounded-lg shadow-xl shadow-red-400 lg:w-2/5"
                     >
                         <form action="https://api.web3forms.com/submit"
                             method="POST"
@@ -92,7 +92,7 @@ const Contact = () => {
                      transition={{ duration: 0.5, delay: 0.4 }}
                      viewport={{ once: true }}
                     >
-                        <img className='h-40 md:h-96' src={'/mailbox.png'} alt="" />
+                        <img className='h-40 md:h-64' src={'/mailbox.png'} alt="" />
                     </motion.div>
                 </div>
 

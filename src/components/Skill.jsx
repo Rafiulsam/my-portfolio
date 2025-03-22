@@ -26,8 +26,8 @@ const skills = [
 
 const Skill = () => {
     return (
-        <section className=" pt-20 px-10 flex justify-center items-center lg:h-screen">
-            <div className="mx-auto  lg:flex justify-between items-center gap-10">
+        <section className="px-10 flex justify-center items-center mt-40 mb-52">
+            <div className="mx-auto lg:flex justify-between items-center gap-10">
                 <div className='lg:w-1/3'>
                     <motion.h2
                         initial={{ opacity: 0, x: -50 }}
@@ -67,7 +67,7 @@ const Skill = () => {
                                 >
                                     {skill.icon}
                                 </motion.div>
-                                <h3 className="mt-4 text-xl font-bold text-gray-800">{skill.name}</h3>
+                                <h3 className="mt-4 text-lg font-bold text-gray-800">{skill.name}</h3>
                                 <div className="mt-4">
                                     <div className="w-full bg-gray-200 rounded-full h-2.5">
                                         <motion.div

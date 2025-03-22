@@ -36,7 +36,7 @@ const projects = [
 
 const Projects = () => {
   return (
-    <section className="pt-32 mb-20 bg-white lg:h-screen">
+    <section className="pt-32 mb-20 bg-white">
       <div className="container mx-auto">
         <motion.h2
           initial={{ opacity: 0, x: -50 }}

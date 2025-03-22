@@ -25,7 +25,7 @@ const About = () => {
   return (
     <section className="container mx-auto px-6 lg:flex lg:justify-between gap-5 lg:items-center lg:mt-40 lg:mb-20">
       {/* About */}
-      <div className="mx-auto py-52 pr-10 text-center lg:text-left ">
+      <div className="max-w-3xl py-52 text-center lg:text-left ">
         <motion.h2
           initial={{ opacity: 0, y: -50 }}
           whileInView={{ opacity: 1, y: 0 }}

@@ -57,7 +57,7 @@ const Skill = () => {
                                 whileInView={{ opacity: 1, y: 0 }}
                                 transition={{ duration: 0.5, delay: index * 0.2 }}
                                 viewport={{ once: true }}
-                                className="bg-white p-3 md:p-6 rounded-lg shadow-xl shadow-red-400"
+                                className="bg-gray-100 p-3 md:p-6 rounded-lg shadow-xl shadow-red-300"
                             >
                                 <motion.div
                                     animate={{ y: [0, 10, 0] }}

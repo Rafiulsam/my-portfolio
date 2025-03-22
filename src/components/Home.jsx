@@ -35,7 +35,7 @@ const Home = () => {
                 initial={{ opacity: 0, y: 0 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 1 }}
-                // whileHover={{ scale: 1.1 }}
+                whileHover={{scale: 1.1}}
                 className="mt-10 md:mt-0 p-5 md:w-[28rem]"
             >
                 <img src="/banner_pic.png" alt="Banner" className="w-64 md:w-full  p-3" />

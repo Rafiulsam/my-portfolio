@@ -25,7 +25,7 @@ const About = () => {
   return (
     <section className="container mx-auto px-6 lg:flex lg:justify-between gap-5 lg:items-center lg:mt-40 lg:mb-20">
       {/* About */}
-      <div className="mx-auto py-52  text-center lg:text-left ">
+      <div className="mx-auto py-52 pr-10 text-center lg:text-left ">
         <motion.h2
           initial={{ opacity: 0, y: -50 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -36,21 +36,16 @@ const About = () => {
           About Me
         </motion.h2>
         {/* Image container for mobile*/}
-        <div
-          className="mt-10 mx-auto w-3/5 md:hidden"
-          onMouseMove={handleMouseMove}
-          onMouseEnter={handleMouseEnter}
-          onMouseLeave={handleMouseLeave}
-        >
+        <div className="mt-10 mx-auto w-3/5 md:hidden">
           <div className="relative">
             {/* image */}
             <motion.img
               initial={{ opacity: 0, y: 0 }}
               animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 1, delay:0.5 }}
+              transition={{ duration: 1, delay: 0.5 }}
               viewport={{ once: true }}
               src="my-picture.jpeg"
-              alt="coding"
+              alt="My picture"
               className="rounded-lg w-full"
             />
           </div>
@@ -60,7 +55,7 @@ const About = () => {
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.5, delay: 0.2 }}
           viewport={{ once: true }}
-          className="mt-6 lg:text-2xl text-gray-600 max-w-4xl mx-auto"
+          className="mt-6 md:text-justify lg:text-2xl text-gray-600 max-w-4xl mx-auto"
         >
           Hey, I'm <span className='text-red-700 font-semibold'>Rafiul Islam Sameer</span>, a front-end developer with a passion for crafting beautiful and functional web experiences. I enjoy turning ideas into reality and making websites that are smooth and user-friendly.
           <br />
@@ -90,7 +85,7 @@ const About = () => {
       </div >
       {/* Image container for desktop */}
       <div
-        className="hidden md:block w-1/2 "
+        className="hidden md:block w-2/5 "
         onMouseMove={handleMouseMove}
         onMouseEnter={handleMouseEnter}
         onMouseLeave={handleMouseLeave}

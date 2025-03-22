@@ -37,13 +37,13 @@ const projects = [
 const Projects = () => {
   return (
     <section className="pt-32 mb-20 bg-white lg:h-screen">
-      <div className="container mx-auto px-6">
+      <div className="container mx-auto">
         <motion.h2
           initial={{ opacity: 0, x: -50 }}
           whileInView={{ opacity: 1, x: 0 }}
           transition={{ duration: 0.5 }}
           viewport={{ once: true }}
-          className="text-3xl font-bold text-center text-gray-800"
+          className="text-6xl font-bold text-center text-gray-800"
         >
           Projects
         </motion.h2>
@@ -56,49 +56,55 @@ const Projects = () => {
         >
           Here are some projects I've developed <span className='font-semibold text-red-700'>during my learning journey.</span>
         </motion.p>
-        <div className="mt-10 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-
-          {/* Projects Container */}
+        {/* Projects Container */}
+        <div className="mt-10 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 px-4">
           {projects.map((project, index) => (
-            <div key={index} className='transition-transform duration-200 hover:scale-105'>
+            <div key={index} className='transition-transform duration-200 md:hover:scale-105'>
               <motion.div
                 initial={{ opacity: 0, y: 50 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.5, delay: index * 0.2 }}
-                className="bg-gray-100 p-6 rounded-lg shadow-xl shadow-red-400 h-96 flex flex-col justify-between"
+                className="bg-gray-100 p-6 rounded-lg shadow-xl shadow-red-300 md:h-[400px] flex flex-col justify-between"
               >
                 {/* Image Container */}
-                <div className="relative w-full h-40">
+                <div className="relative w-full ">
                   <img
                     src={project.image}
                     alt={project.title}
-                    className="w-full h-full object-cover rounded-lg"
+                    className="w-full h-48 object-cover rounded-lg"
                   />
 
-                  <a href={project.links.live} target='_blank' className="absolute inset-0 bg-black bg-opacity-50 flex items-center justify-center opacity-0 hover:opacity-100 transition duration-300 rounded-lg">
+                  <a href={project.links.live} target='_blank' className="hidden absolute inset-0 bg-black bg-opacity-50 md:flex items-center justify-center opacity-0 hover:opacity-100 transition duration-300 rounded-lg">
                     <FaArrowUpRightFromSquare className="text-red-400 text-3xl drop-shadow-[0_0_10px_rgba(255,0,0,0.8)]" />
                   </a>
                 </div>
 
                 {/* Project Info */}
-                <h3 className="text-xl font-bold text-gray-800">{project.title}</h3>
+                <h3 className="text-lg md:text-xl font-bold text-gray-800">{project.title}</h3>
                 <p className="mt-2 text-gray-600">{project.description}</p>
-                <div className='space-x-4'>
+
+                {/* Links */}
+                <div className='flex flex-col space-y-3 mt-4 md:space-y-0 md:space-x-4 md:flex-row'>
                   <a
                     href={project.links.github} target='_blank'
-                    className="mt-4 inline-flex items-center gap-2 px-4 py-2 bg-red-700 text-white rounded-lg hover:bg-red-800 font-semibold"
+                    className="w-full md:w-auto flex justify-center items-center gap-2 px-4 py-2 bg-red-700 text-white rounded-lg hover:bg-red-800 font-semibold"
                   >
                     Client Side <GoRepo />
                   </a>
                   {project.links.server && (
                     <a
                       href={project.links.server} target='_blank'
-                      className="mt-4 inline-flex items-center gap-2 px-4 py-2 bg-red-700 text-white rounded-lg hover:bg-red-800 font-semibold"
+                      className="w-full md:w-auto flex justify-center items-center gap-2 px-4 py-2 bg-red-700 text-white rounded-lg hover:bg-red-800 font-semibold"
                     >
                       Server Side <GoRepo />
                     </a>
                   )}
                 </div>
+
+                {/* Mobile Live Link */}
+                <a href={project.links.live} target='_blank' className="md:hidden flex justify-center items-center gap-2 mt-4 w-full border border-red-700 text-red-500 text-lg rounded-lg py-2">
+                  View Live <FaArrowUpRightFromSquare/>
+                </a>
 
               </motion.div>
             </div>

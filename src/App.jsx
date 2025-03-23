@@ -5,6 +5,7 @@ import Footer from './components/Footer';
 import ScrollToTop from './components/ScrollToTop';
 import Loader from './components/Loader';
 import ErrorPage from './components/ErrorPage';
+import { ToastContainer, Zoom } from 'react-toastify';
 
 // Lazy loading components
 const Home = lazy(() => import('./components/Home'));
@@ -14,15 +15,15 @@ const Contact = lazy(() => import('./components/Contact'));
 const Skill = lazy(() => import('./components/Skill'));
 
 function App() {
- const path = useLocation();
+  const path = useLocation();
 
   const knownPaths = ["/", "/about", "/skills", "/projects", "/contact"];
-  
+
   const hideLayout = !knownPaths.includes(location.pathname);
   return (
     <div>
       <Suspense fallback={<Loader />}>
-         {!hideLayout && <Navbar />}
+        {!hideLayout && <Navbar />}
         <main>
           <Routes>
             <Route path="/" element={<Home />} />
@@ -36,6 +37,21 @@ function App() {
         {!hideLayout && <Footer />}
       </Suspense>
       <ScrollToTop />
+      
+      {/* Toast Container */}
+      <ToastContainer
+        position="top-center"
+        autoClose={2000}
+        hideProgressBar
+        newestOnTop={false}
+        closeOnClick
+        rtl={false}
+        pauseOnFocusLoss
+        draggable
+        pauseOnHover
+        theme="light"
+        transition={Zoom}
+      />
     </div >
   );
 }

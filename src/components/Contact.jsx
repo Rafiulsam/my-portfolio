@@ -1,8 +1,52 @@
-import React from 'react';
+import React, { useRef } from 'react';
 import { motion } from 'framer-motion';
 import { FaAt, FaLinkedin, FaGithub } from 'react-icons/fa';
+import emailjs from '@emailjs/browser';
+import { toast, Zoom } from 'react-toastify';
 
 const Contact = () => {
+    const form = useRef();
+    const handleOnSubmit = (e) => {
+        e.preventDefault();
+
+        emailjs
+            .sendForm(import.meta.env.VITE_EMAILJS_SERVICE_ID,
+                import.meta.env.VITE_EMAILJS_TEMPLATE_ID,
+                form.current, {
+                publicKey: import.meta.env.VITE_EMAILJS_PUBLIC_KEY
+            })
+            .then(
+                () => {
+                    toast.success('Message sent successfully!', {
+                        position: "top-center",
+                        autoClose: 2000,
+                        hideProgressBar: false,
+                        closeOnClick: true,
+                        pauseOnHover: true,
+                        draggable: true,
+                        progress: undefined,
+                        theme: "light",
+                        transition: Zoom,
+                    });
+                    form.current.reset();
+                },
+                (error) => {
+                    console.error(error.text);
+                    toast.error("Massage not send", {
+                        position: "top-center",
+                        autoClose: 2000,
+                        hideProgressBar: false,
+                        closeOnClick: true,
+                        pauseOnHover: true,
+                        draggable: true,
+                        progress: undefined,
+                        theme: "light",
+                        transition: Zoom,
+                    });
+                },
+            );
+    }
+    console.log("Service ID:", import.meta.env.VITE_EMAILJS_SERVICE_ID);
 
     return (
         <section id="contact" className="py-40">
@@ -35,10 +79,7 @@ const Contact = () => {
                         viewport={{ once: true }}
                         className="p-8 rounded-lg shadow-xl shadow-red-400 lg:w-2/5"
                     >
-                        <form action="https://api.web3forms.com/submit"
-                            method="POST"
-                        >
-                            <input type="hidden" name="access_key" value="23d3c3fb-0bd7-47f8-97a3-f293a209fd42" />
+                        <form onSubmit={handleOnSubmit} ref={form}>
                             <div className="mb-6">
                                 <label htmlFor="name" className="block font-medium mb-2 text-red-700">
                                     Name
@@ -87,10 +128,10 @@ const Contact = () => {
                         </form>
                     </motion.div>
                     <motion.div
-                     initial={{ opacity: 0, x: 50 }}
-                     whileInView={{ opacity: 1, x: 0 }}
-                     transition={{ duration: 0.5, delay: 0.4 }}
-                     viewport={{ once: true }}
+                        initial={{ opacity: 0, x: 50 }}
+                        whileInView={{ opacity: 1, x: 0 }}
+                        transition={{ duration: 0.5, delay: 0.4 }}
+                        viewport={{ once: true }}
                     >
                         <img className='h-40 md:h-64' src={'/mailbox.png'} alt="" />
                     </motion.div>

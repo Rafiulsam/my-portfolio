@@ -6,9 +6,9 @@ const Footer = () => {
   const location = useLocation();
 
   // Define a base style and conditionally change the background based on the route
-  const textColor = location.pathname === "/" 
-      ? "text-white"
-      : "text-red-700"; 
+  const textColor = location.pathname === "/"
+    ? "text-white"
+    : "text-red-700";
 
   return (
     <footer className={`${textColor} py-6`}>
@@ -37,11 +37,13 @@ const Footer = () => {
             <FaGithub className="w-6 h-6" />
           </a>
         </div>
-        <div className='text-center md:text-end'>
-          <p>&copy; {new Date().getFullYear()} Sameer. All rights reserved.</p>
-          <p>
-            Designed by Novera <span>•</span> Developed by Sameer
-          </p>
+        <div className='text-center md:text-end font-semibold'>
+          <small>
+            <p>&copy; {new Date().getFullYear()} Sameer. All rights reserved.</p>
+            <p>
+              <i> Designed by Novera</i> <span>|</span> <i>Developed by Sameer</i>
+            </p>
+          </small>
         </div>
       </div>
     </footer>

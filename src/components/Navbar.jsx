@@ -26,7 +26,7 @@ const Navbar = ({ theme, toggleTheme }) => {
     ];
 
     return (
-        <nav className={`${navbarBg} dark:backdrop-blur-lg shadow-lg shadow-red-400 dark:shadow-gray-400 fixed w-full top-0 z-50`}>
+        <nav className={`${navbarBg} shadow-lg shadow-red-400 dark:shadow-gray-400 fixed w-full top-0 z-50 `}>
             <div className="container mx-auto px-6 py-4 flex justify-between items-center">
                 {/* Logo */}
                 <Link to="/" className="text-xl font-bold text-white transition-transform duration-200 hover:scale-105">
@@ -61,7 +61,7 @@ const Navbar = ({ theme, toggleTheme }) => {
                     </div>
 
                     {/* Theme Dropdown */}
-                    <div className="relative ">
+                    <div className="relative transition-transform duration-200 hover:-translate-y-1 hover:scale-105 hover:bg-black hover:bg-opacity-50 border border-white rounded-md">
                         <button
                             onClick={() => setDropdownOpen(!dropdownOpen)}
                             className="p-2 rounded-lg"
@@ -80,7 +80,7 @@ const Navbar = ({ theme, toggleTheme }) => {
                                     initial={{ opacity: 0, y: -10 }}
                                     animate={{ opacity: 1, y: 0 }}
                                     exit={{ opacity: 0, y: -10 }}
-                                    className="absolute right-0 mt-2 w-36 bg-white dark:bg-gray-800 shadow-lg rounded-md overflow-hidden"
+                                    className="absolute right-0 mt-2 w-36 bg-white dark:bg-black shadow-sm shadow-white rounded-md overflow-hidden"
                                 >
                                     <button
                                         onClick={() => {
@@ -120,7 +120,7 @@ const Navbar = ({ theme, toggleTheme }) => {
                         initial={{ opacity: 0, y: -20 }}
                         animate={{ opacity: 1, y: 0 }}
                         exit={{ opacity: 0, y: -20 }}
-                        className="md:hidden flex flex-col items-center absolute top-16 right-0 bg-black/50 dark:bg-gray-500/30 backdrop-blur-lg shadow-lg rounded-md py-4"
+                        className="md:hidden flex flex-col items-center absolute top-17 right-0 bg-black/50 dark:bg-gray-500/30 backdrop-blur-lg shadow-lg rounded-md py-4"
                     >
                         {navLinks.map(({ path, label }, index) => (
                             <NavLink

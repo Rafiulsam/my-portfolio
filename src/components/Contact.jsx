@@ -56,7 +56,7 @@ const Contact = () => {
                     whileInView={{ opacity: 1, y: 0 }}
                     transition={{ duration: 0.5 }}
                     viewport={{ once: true }}
-                    className="text-3xl font-bold text-center text-gray-800"
+                    className="text-3xl font-bold text-center text-gray-800 dark:text-white"
                 >
                     Contact Me
                 </motion.h2>
@@ -65,7 +65,7 @@ const Contact = () => {
                     whileInView={{ opacity: 1, y: 0 }}
                     transition={{ duration: 0.5, delay: 0.2 }}
                     viewport={{ once: true }}
-                    className="mt-4 text-lg text-gray-600 text-center max-w-2xl mx-auto px-8"
+                    className="mt-4 text-lg text-gray-600 dark:text-slate-300 text-center max-w-2xl mx-auto px-8"
                 >
                     Have a question or want to work together? <span className='font-semibold text-red-700'>Feel free to reach out!</span>
                 </motion.p>
@@ -77,7 +77,7 @@ const Contact = () => {
                         whileInView={{ opacity: 1, y: 0 }}
                         transition={{ duration: 0.5, delay: 0.4 }}
                         viewport={{ once: true }}
-                        className="p-8 rounded-lg shadow-xl shadow-red-400 lg:w-2/5"
+                        className="p-8 rounded-lg shadow-lg bg-gray-100 dark:dark:bg-[#1a1d23] shadow-red-400 dark:shadow-gray-400 lg:w-2/5"
                     >
                         <form onSubmit={handleOnSubmit} ref={form}>
                             <div className="mb-6">
@@ -89,7 +89,7 @@ const Contact = () => {
                                     id="name"
                                     name="name"
                                     placeholder="Your Name"
-                                    className="w-full px-4 py-2  border-b border-red-300 focus:outline-none focus:ring-2 focus:ring-red-700"
+                                    className="w-full px-4 py-2 bg-gray-100 dark:text-white dark:dark:bg-[#1a1d23] border-b border-red-300 dark:border-slate-100 focus:outline-none dark:focus:ring-stone-300"
                                     required
                                 />
                             </div>
@@ -102,7 +102,7 @@ const Contact = () => {
                                     id="email"
                                     name="email"
                                     placeholder="Your.email@example.com"
-                                    className="w-full px-4 py-2 border-b border-red-300 focus:outline-none focus:ring-2 focus:ring-red-700"
+                                    className="w-full px-4 py-2 bg-gray-100 dark:text-white dark:dark:bg-[#1a1d23] border-b border-red-300 dark:border-slate-100 focus:outline-none"
                                     required
                                 />
                             </div>
@@ -115,7 +115,7 @@ const Contact = () => {
                                     name="message"
                                     rows="3"
                                     placeholder="Your message..."
-                                    className="w-full px-4 py-2 border-b border-red-300 focus:outline-none focus:ring-2 focus:ring-red-700"
+                                    className="w-full px-4 py-2 bg-gray-100 dark:text-white dark:dark:bg-[#1a1d23] border-b border-red-300 dark:border-slate-100 focus:outline-none"
                                     required
                                 ></textarea>
                             </div>
@@ -145,7 +145,7 @@ const Contact = () => {
                     viewport={{ once: true }}
                     className="mt-12 text-center"
                 >
-                    <h3 className="text-xl font-bold text-gray-800">Or reach out directly:</h3>
+                    <h3 className="text-xl font-bold text-gray-800 dark:text-white">Or reach out directly:</h3>
                     <div className="mt-4 flex justify-center space-x-6">
                         <a
                             href="mailto:mailto:your.email@example.com"

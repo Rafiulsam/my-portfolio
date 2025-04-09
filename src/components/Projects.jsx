@@ -36,14 +36,14 @@ const projects = [
 
 const Projects = () => {
   return (
-    <section className="pt-32 mb-20 bg-white">
+    <section className="pt-32 mb-20">
       <div className="container mx-auto">
         <motion.h2
           initial={{ opacity: 0, x: -50 }}
           whileInView={{ opacity: 1, x: 0 }}
           transition={{ duration: 0.5 }}
           viewport={{ once: true }}
-          className="text-6xl font-bold text-center text-gray-800"
+          className="text-6xl font-bold text-center text-gray-800 dark:text-white"
         >
           Projects
         </motion.h2>
@@ -52,7 +52,7 @@ const Projects = () => {
           whileInView={{ opacity: 1, x: 0 }}
           transition={{ duration: 0.5, delay: 0.2 }}
           viewport={{ once: true }}
-          className="mt-4 text-lg text-gray-600 text-center max-w-2xl mx-auto px-10"
+          className="mt-4 text-lg text-gray-600 dark:text-slate-300 text-center max-w-2xl mx-auto px-10"
         >
           Here are some projects I've developed <span className='font-semibold text-red-700'>during my learning journey.</span>
         </motion.p>
@@ -64,10 +64,10 @@ const Projects = () => {
                 initial={{ opacity: 0, y: 50 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.5, delay: index * 0.2 }}
-                className="bg-gray-100 p-6 rounded-lg shadow-xl shadow-red-300 md:h-[400px] flex flex-col justify-between"
+                className="bg-gray-100 dark:bg-[#1a1d23] p-6 rounded-lg shadow-lg shadow-red-300 dark:shadow-gray-400 md:h-full flex flex-col justify-between"
               >
                 {/* Image Container */}
-                <div className="relative w-full ">
+                <div className="relative w-full mb-2">
                   <img
                     src={project.image}
                     alt={project.title}
@@ -80,8 +80,8 @@ const Projects = () => {
                 </div>
 
                 {/* Project Info */}
-                <h3 className="text-lg md:text-xl font-bold text-gray-800">{project.title}</h3>
-                <p className="mt-2 text-gray-600">{project.description}</p>
+                <h3 className="text-lg md:text-xl font-bold text-gray-800 dark:text-white">{project.title}</h3>
+                <p className="mt-2 text-gray-600 dark:text-slate-300">{project.description}</p>
 
                 {/* Links */}
                 <div className='flex flex-col space-y-3 mt-4 md:space-y-0 md:space-x-4 md:flex-row'>

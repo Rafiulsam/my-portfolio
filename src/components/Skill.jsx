@@ -34,7 +34,7 @@ const Skill = () => {
                         whileInView={{ opacity: 1, x: 0 }}
                         transition={{ duration: 0.5 }}
                         viewport={{ once: true }}
-                        className="text-6xl font-bold text-gray-800"
+                        className="text-6xl font-bold text-gray-800 dark:text-white"
                     >
                         Skills
                     </motion.h2>
@@ -43,7 +43,7 @@ const Skill = () => {
                         whileInView={{ opacity: 1, x: 0 }}
                         transition={{ duration: 0.5, delay: 0.2 }}
                         viewport={{ once: true }}
-                        className="mt-4 text-lg text-gray-600  max-w-2xl mx-auto pr-10"
+                        className="mt-4 text-lg text-gray-600 dark:text-slate-300 max-w-2xl mx-auto pr-10"
                     >
                         Here are some of the skills I've acquired over the years. <span className='font-semibold text-red-700'>I'm always learning and improving!</span>
                     </motion.p>
@@ -57,7 +57,7 @@ const Skill = () => {
                                 whileInView={{ opacity: 1, y: 0 }}
                                 transition={{ duration: 0.5, delay: index * 0.2 }}
                                 viewport={{ once: true }}
-                                className="bg-gray-100 p-3 md:p-6 rounded-lg shadow-xl shadow-red-300"
+                                className="bg-gray-100 dark:bg-[#1a1d23] p-3 md:p-6 rounded-lg shadow-lg shadow-red-300 dark:shadow-gray-400"
                             >
                                 <motion.div
                                     animate={{ y: [0, 10, 0] }}
@@ -67,9 +67,9 @@ const Skill = () => {
                                 >
                                     {skill.icon}
                                 </motion.div>
-                                <h3 className="mt-4 text-lg font-bold text-gray-800">{skill.name}</h3>
+                                <h3 className="mt-4 text-lg font-bold text-gray-800 dark:text-white">{skill.name}</h3>
                                 <div className="mt-4">
-                                    <div className="w-full bg-gray-200 rounded-full h-2.5">
+                                    <div className="w-full bg-gray-200 dark:bg-gray-800 rounded-full h-2.5">
                                         <motion.div
                                             initial={{ width: 0 }}
                                             whileInView={{ width: `${skill.level}%` }}
@@ -78,7 +78,7 @@ const Skill = () => {
                                             className="h-2.5 rounded-full bg-red-700"
                                         />
                                     </div>
-                                    <p className="mt-2 text-sm text-gray-600">{skill.level}%</p>
+                                    <p className="mt-2 text-sm text-gray-600 dark:text-white">{skill.level}%</p>
                                 </div>
                             </motion.div>
                         </div>

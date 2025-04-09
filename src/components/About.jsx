@@ -31,7 +31,7 @@ const About = () => {
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.5 }}
           viewport={{ once: true }}
-          className="text-6xl font-bold text-gray-800 "
+          className="text-6xl font-bold text-gray-800 dark:text-gray-200"
         >
           About Me
         </motion.h2>
@@ -55,7 +55,7 @@ const About = () => {
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.5, delay: 0.2 }}
           viewport={{ once: true }}
-          className="mt-6 md:text-justify lg:text-2xl text-gray-600 max-w-4xl mx-auto"
+          className="mt-6 md:text-justify lg:text-2xl text-gray-600 dark:text-gray-200 max-w-4xl mx-auto"
         >
           Hey, I'm <span className='text-red-700 font-semibold'>Rafiul Islam Sameer</span>, a front-end developer with a passion for crafting beautiful and functional web experiences. I enjoy turning ideas into reality and making websites that are smooth and user-friendly.
           <br />
@@ -71,13 +71,13 @@ const About = () => {
         >
           <Link
             to="/projects"
-            className="px-3 md:px-6 py-3 font-semibold bg-red-700 text-white rounded-lg hover:bg-red-800"
+            className="px-3 md:px-6 py-3 font-semibold bg-red-700 text-white rounded-lg hover:bg-red-800 "
           >
             View My Work
           </Link>
           <Link
             to="/contact"
-            className="px-6 py-3 bg-gray-800 font-semibold text-white rounded-lg hover:bg-gray-900"
+            className="px-6 py-3 bg-gray-800 font-semibold text-white rounded-lg hover:bg-gray-900 dark:bg-white dark:opacity-50 dark:text-black hover:dark:opacity-70"
           >
             Contact Me
           </Link>

@@ -2,18 +2,19 @@ import React, { useCallback } from "react";
 import Particles from "react-tsparticles";
 import { loadFull } from "tsparticles";
 
-const ParticlesBackground = () => {
+const ParticlesBackground = ({ theme }) => {
   const particlesInit = useCallback(async (engine) => {
     await loadFull(engine);
   }, []);
-
+  const backgroundColor = theme === "dark" ? "#00000" : "#b61924";
   return (
     <Particles
+    key={theme}
       id="tsparticles"
       init={particlesInit}
       options={{
         background: {
-          color: "#b61924", // ✅ background color
+          color:{value:backgroundColor} // ✅ background color
         },
         particles: {
           number: {

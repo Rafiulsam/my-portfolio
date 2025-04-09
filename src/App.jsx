@@ -6,6 +6,7 @@ import ScrollToTop from './components/ScrollToTop';
 import Loader from './components/Loader';
 import ErrorPage from './components/ErrorPage';
 import { ToastContainer, Zoom } from 'react-toastify';
+import useTheme from "./hooks/useTheme";
 
 // Lazy loading components
 const Home = lazy(() => import('./components/Home'));
@@ -20,13 +21,16 @@ function App() {
   const knownPaths = ["/", "/about", "/skills", "/projects", "/contact"];
 
   const hideLayout = !knownPaths.includes(location.pathname);
+
+  const { theme, toggleTheme } = useTheme();
+
   return (
     <div>
       <Suspense fallback={<Loader />}>
-        {!hideLayout && <Navbar />}
+        {!hideLayout && <Navbar theme={theme} toggleTheme={toggleTheme}/>}
         <main>
           <Routes>
-            <Route path="/" element={<Home />} />
+            <Route path="/" element={<Home theme={theme}/>} />
             <Route path="/about" element={<About />} />
             <Route path="/skills" element={<Skill />} />
             <Route path="/projects" element={<Projects />} />

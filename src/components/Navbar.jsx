@@ -80,7 +80,7 @@ const Navbar = ({ theme, toggleTheme }) => {
                                     initial={{ opacity: 0, y: -10 }}
                                     animate={{ opacity: 1, y: 0 }}
                                     exit={{ opacity: 0, y: -10 }}
-                                    className="absolute right-0 mt-2 w-36 bg-white dark:bg-black shadow-sm shadow-white rounded-md overflow-hidden"
+                                    className="absolute right-0 mt-2 w-36 bg-white dark:bg-black shadow-sm shadow-black dark:shadow-white rounded-md overflow-hidden"
                                 >
                                     <button
                                         onClick={() => {

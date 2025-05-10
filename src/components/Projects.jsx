@@ -15,12 +15,12 @@ const projects = [
     },
   },
   {
-    image: "/E-baj.jpg",
-    title: 'E-commerce Site',
-    description: 'A simple e-commerce site build with React lets users browse products, add them to a cart, and check out.',
+    image: "/Rest-countries.jpg",
+    title: 'Around the World',
+    description: 'Around the World is a React web app that explores global country data through the REST Countries API. It displays details like flags, population, area, region, and more.',
     links: {
-      live: 'https://e-baj-app.netlify.app/',
-      github: 'https://github.com/Rafiulsam/e-baj-simple',
+      live: 'https://around-the-w0rld.netlify.app/',
+      github: 'https://github.com/Rafiulsam/around-the-world',
     }
   },
   {
@@ -32,6 +32,15 @@ const projects = [
       github: 'https://github.com/Rafiulsam/BookNest-react-route',
     }
   },
+  //  {
+  //   image: "/E-baj.jpg",
+  //   title: 'E-commerce Site',
+  //   description: 'A simple e-commerce site build with React lets users browse products, add them to a cart, and check out.',
+  //   links: {
+  //     live: 'https://e-baj-app.netlify.app/',
+  //     github: 'https://github.com/Rafiulsam/e-baj-simple',
+  //   }
+  // },
 ];
 
 const Projects = () => {

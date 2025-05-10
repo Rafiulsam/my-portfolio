@@ -46,7 +46,6 @@ const Contact = () => {
                 },
             );
     }
-    console.log("Service ID:", import.meta.env.VITE_EMAILJS_SERVICE_ID);
 
     return (
         <section id="contact" className="py-40">

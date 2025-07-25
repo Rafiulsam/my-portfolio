@@ -1,10 +1,11 @@
-import React, { useRef } from 'react';
+import { useRef, useState } from 'react';
 import { motion } from 'framer-motion';
 import { FaAt, FaLinkedin, FaGithub } from 'react-icons/fa';
 import emailjs from '@emailjs/browser';
 import { toast, Zoom } from 'react-toastify';
 
 const Contact = () => {
+    const [focusField, setFocusField] = useState(null);
     const form = useRef();
     const handleOnSubmit = (e) => {
         e.preventDefault();
@@ -79,45 +80,69 @@ const Contact = () => {
                         className="p-8 rounded-lg shadow-lg bg-gray-100 dark:dark:bg-[#1a1d23] shadow-red-400 dark:shadow-gray-400 lg:w-2/5"
                     >
                         <form onSubmit={handleOnSubmit} ref={form}>
-                            <div className="mb-6">
-                                <label htmlFor="name" className="block font-medium mb-2 text-red-700">
-                                    Name
-                                </label>
+                            {/* Name Field */}
+                            <div className="mb-6 relative">
                                 <input
                                     type="text"
                                     id="name"
                                     name="name"
-                                    placeholder="Your Name"
-                                    className="w-full px-4 py-2 bg-gray-100 dark:text-white dark:dark:bg-[#1a1d23] border-b border-red-300 dark:border-slate-100 focus:outline-none dark:focus:ring-stone-300"
+                                    placeholder={focusField === 'name' ? 'Type your name' : ''}
+                                    onFocus={() => setFocusField('name')}
+                                    onBlur={() => setFocusField(null)}
+                                    className="w-full px-4 pt-6 pb-2 bg-gray-100 dark:text-white dark:bg-[#1a1d23] border-b border-red-300 dark:border-slate-100 focus:outline-none"
                                     required
                                 />
-                            </div>
-                            <div className="mb-6">
-                                <label htmlFor="email" className="block font-medium mb-2 text-red-700">
-                                    Email
+                                <label
+                                    htmlFor="name"
+                                    className={`absolute left-4 transition-all duration-200 text-red-700 font-medium pointer-events-none ${focusField === 'name' ? 'top-2 text-sm' : 'top-4 text-base'
+                                        }`}
+                                >
+                                    Name
                                 </label>
+                            </div>
+
+                            {/* Email Field */}
+                            <div className="mb-6 relative">
                                 <input
                                     type="email"
                                     id="email"
                                     name="email"
-                                    placeholder="Your.email@example.com"
-                                    className="w-full px-4 py-2 bg-gray-100 dark:text-white dark:dark:bg-[#1a1d23] border-b border-red-300 dark:border-slate-100 focus:outline-none"
+                                    placeholder={focusField === 'email' ? 'Type your email' : ''}
+                                    onFocus={() => setFocusField('email')}
+                                    onBlur={() => setFocusField(null)}
+                                    className="w-full px-4 pt-6 pb-2 bg-gray-100 dark:text-white dark:bg-[#1a1d23] border-b border-red-300 dark:border-slate-100 focus:outline-none"
                                     required
                                 />
-                            </div>
-                            <div className="mb-6">
-                                <label htmlFor="message" className="block font-medium mb-2 text-red-700">
-                                    Message
+                                <label
+                                    htmlFor="email"
+                                    className={`absolute left-4 transition-all duration-200 text-red-700 font-medium pointer-events-none ${focusField === 'email' ? 'top-2 text-sm' : 'top-4 text-base'
+                                        }`}
+                                >
+                                    Email
                                 </label>
+                            </div>
+
+                            {/* Message Field */}
+                            <div className="mb-6 relative">
                                 <textarea
                                     id="message"
                                     name="message"
                                     rows="3"
-                                    placeholder="Your message..."
-                                    className="w-full px-4 py-2 bg-gray-100 dark:text-white dark:dark:bg-[#1a1d23] border-b border-red-300 dark:border-slate-100 focus:outline-none"
+                                    placeholder={focusField === 'message' ? 'Type your message...' : ''}
+                                    onFocus={() => setFocusField('message')}
+                                    onBlur={() => setFocusField(null)}
+                                    className="w-full px-4 pt-6 pb-2 bg-gray-100 dark:text-white dark:bg-[#1a1d23] border-b border-red-300 dark:border-slate-100 focus:outline-none"
                                     required
-                                ></textarea>
+                                />
+                                <label
+                                    htmlFor="message"
+                                    className={`absolute left-4 transition-all duration-200 text-red-700 font-medium pointer-events-none ${focusField === 'message' ? 'top-2 text-sm' : 'top-4 text-base'
+                                        }`}
+                                >
+                                    Message
+                                </label>
                             </div>
+
                             <button
                                 type="submit"
                                 className="w-full px-6 py-3 bg-[#b61924] text-white rounded-lg hover:bg-red-800 focus:outline-none focus:ring-2 focus:ring-black"

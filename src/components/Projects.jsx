@@ -1,4 +1,3 @@
-import React from 'react';
 import { motion } from 'framer-motion';
 import { FaArrowUpRightFromSquare } from 'react-icons/fa6';
 import { GoRepo } from 'react-icons/go';
@@ -17,7 +16,7 @@ const projects = [
   {
     image: "/Rest-countries.jpg",
     title: 'Around the World',
-    description: 'Around the World is a React web app that explores global country data through the REST Countries API. It displays details like flags, population, area, region, and more.',
+    description: 'Around the World is a React web app that explores global country. It displays details like flags, population, area, region, and more.',
     links: {
       live: 'https://around-the-w0rld.netlify.app/',
       github: 'https://github.com/Rafiulsam/around-the-world',
@@ -32,15 +31,15 @@ const projects = [
       github: 'https://github.com/Rafiulsam/BookNest-react-route',
     }
   },
-  //  {
-  //   image: "/E-baj.jpg",
-  //   title: 'E-commerce Site',
-  //   description: 'A simple e-commerce site build with React lets users browse products, add them to a cart, and check out.',
-  //   links: {
-  //     live: 'https://e-baj-app.netlify.app/',
-  //     github: 'https://github.com/Rafiulsam/e-baj-simple',
-  //   }
-  // },
+   {
+    image: "/portfolio.jpg",
+    title: 'Personal Portfolio',
+    description: 'This is a personal art portfolio website that showcases artwork, creative projects, and artistic background in a clean, responsive layout.',
+    links: {
+      live: 'https://noveranikkon.netlify.app/',
+      github: 'https://github.com/Rafiulsam/novera_portfolio',
+    }
+  },
 ];
 
 const Projects = () => {
@@ -66,7 +65,7 @@ const Projects = () => {
           Here are some projects I've developed <span className='font-semibold text-red-700'>during my learning journey.</span>
         </motion.p>
         {/* Projects Container */}
-        <div className="mt-10 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 px-4">
+        <div className="mt-10 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 px-4">
           {projects.map((project, index) => (
             <div key={index} className='transition-transform duration-200 md:hover:scale-105'>
               <motion.div
@@ -90,20 +89,20 @@ const Projects = () => {
 
                 {/* Project Info */}
                 <h3 className="text-lg md:text-xl font-bold text-gray-800 dark:text-white">{project.title}</h3>
-                <p className="mt-2 text-gray-600 dark:text-slate-300">{project.description}</p>
+                <p className="text-sm mt-2 text-gray-600 dark:text-slate-300">{project.description}</p>
 
                 {/* Links */}
                 <div className='flex flex-col space-y-3 mt-4 md:space-y-0 md:space-x-4 md:flex-row'>
                   <a
                     href={project.links.github} target='_blank'
-                    className="w-full md:w-auto flex justify-center items-center gap-2 px-4 py-2 bg-red-700 text-white rounded-lg hover:bg-red-800 font-semibold"
+                    className="w-full md:w-auto text-xs flex justify-center items-center gap-2 px-4 py-2 bg-red-700 text-white rounded-lg hover:bg-red-800 font-semibold"
                   >
                     Client Side <GoRepo />
                   </a>
                   {project.links.server && (
                     <a
                       href={project.links.server} target='_blank'
-                      className="w-full md:w-auto flex justify-center items-center gap-2 px-4 py-2 bg-red-700 text-white rounded-lg hover:bg-red-800 font-semibold"
+                      className="w-full md:w-auto text-xs flex justify-center items-center gap-2 px-4 py-2 bg-red-700 text-white rounded-lg hover:bg-red-800 font-semibold"
                     >
                       Server Side <GoRepo />
                     </a>

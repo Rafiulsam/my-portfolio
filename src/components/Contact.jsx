@@ -6,7 +6,12 @@ import { toast, Zoom } from "react-toastify";
 
 const Contact = () => {
   const [focusField, setFocusField] = useState(null);
+  const [name, setName] = useState("");
+  const [email, setEmail] = useState("");
+  const [message, setMessage] = useState("");
+
   const form = useRef();
+
   const handleOnSubmit = (e) => {
     e.preventDefault();
 
@@ -28,22 +33,23 @@ const Contact = () => {
             closeOnClick: true,
             pauseOnHover: true,
             draggable: true,
-            progress: undefined,
             theme: "light",
             transition: Zoom,
           });
           form.current.reset();
+          setName("");
+          setEmail("");
+          setMessage("");
         },
         (error) => {
           console.error(error.text);
-          toast.error("Massage not send", {
+          toast.error("Message not sent", {
             position: "top-center",
             autoClose: 2000,
             hideProgressBar: false,
             closeOnClick: true,
             pauseOnHover: true,
             draggable: true,
-            progress: undefined,
             theme: "light",
             transition: Zoom,
           });
@@ -63,6 +69,7 @@ const Contact = () => {
         >
           Contact Me
         </motion.h2>
+
         <motion.p
           initial={{ opacity: 0, y: 50 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -77,13 +84,13 @@ const Contact = () => {
         </motion.p>
 
         {/* Contact Form */}
-        <div className="flex flex-col-reverse md:flex-row  max-w-7xl mx-auto justify-evenly items-center mt-16">
+        <div className="flex flex-col-reverse md:flex-row max-w-7xl mx-auto justify-evenly items-center mt-16">
           <motion.div
             initial={{ opacity: 0, y: 50 }}
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5, delay: 0.4 }}
             viewport={{ once: true }}
-            className="p-8 rounded-lg shadow-lg bg-gray-100 dark:dark:bg-[#1a1d23] shadow-red-400 dark:shadow-gray-400 lg:w-2/5"
+            className="p-8 rounded-lg shadow-lg bg-gray-100 dark:bg-[#1a1d23] shadow-red-400 dark:shadow-gray-400 lg:w-2/5"
           >
             <form onSubmit={handleOnSubmit} ref={form}>
               {/* Name Field */}
@@ -92,16 +99,20 @@ const Contact = () => {
                   type="text"
                   id="name"
                   name="name"
+                  value={name}
                   placeholder={focusField === "name" ? "Type your name" : ""}
                   onFocus={() => setFocusField("name")}
+                  onChange={(e) => setName(e.target.value)}
                   onBlur={() => setFocusField(null)}
-                  className="w-full px-4 pt-6 pb-2 bg-gray-100 dark:text-white dark:bg-[#1a1d23] border-b border-red-300 dark:border-slate-100 focus:outline-none"
+                  className="w-full px-4 pt-6 pb-2 bg-gray-100 dark:bg-[#1a1d23] text-gray-800 dark:text-white border-b border-red-300 dark:border-slate-100 focus:outline-none"
                   required
                 />
                 <label
                   htmlFor="name"
                   className={`absolute left-4 transition-all duration-200 text-red-700 font-medium pointer-events-none ${
-                    focusField === "name" ? "top-2 text-sm" : "top-4 text-base"
+                    focusField === "name" || name.length > 0
+                      ? "top-2 text-sm"
+                      : "top-4 text-base"
                   }`}
                 >
                   Name
@@ -114,16 +125,20 @@ const Contact = () => {
                   type="email"
                   id="email"
                   name="email"
+                  value={email}
                   placeholder={focusField === "email" ? "Type your email" : ""}
                   onFocus={() => setFocusField("email")}
+                  onChange={(e) => setEmail(e.target.value)}
                   onBlur={() => setFocusField(null)}
-                  className="w-full px-4 pt-6 pb-2 bg-gray-100 dark:text-white dark:bg-[#1a1d23] border-b border-red-300 dark:border-slate-100 focus:outline-none"
+                  className="w-full px-4 pt-6 pb-2 bg-gray-100 dark:bg-[#1a1d23] text-gray-800 dark:text-white border-b border-red-300 dark:border-slate-100 focus:outline-none"
                   required
                 />
                 <label
                   htmlFor="email"
                   className={`absolute left-4 transition-all duration-200 text-red-700 font-medium pointer-events-none ${
-                    focusField === "email" ? "top-2 text-sm" : "top-4 text-base"
+                    focusField === "email" || email.length > 0
+                      ? "top-2 text-sm"
+                      : "top-4 text-base"
                   }`}
                 >
                   Email
@@ -136,18 +151,20 @@ const Contact = () => {
                   id="message"
                   name="message"
                   rows="3"
+                  value={message}
                   placeholder={
                     focusField === "message" ? "Type your message..." : ""
                   }
                   onFocus={() => setFocusField("message")}
+                  onChange={(e) => setMessage(e.target.value)}
                   onBlur={() => setFocusField(null)}
-                  className="w-full px-4 pt-6 pb-2 bg-gray-100 dark:text-white dark:bg-[#1a1d23] border-b border-red-300 dark:border-slate-100 focus:outline-none"
+                  className="w-full px-4 pt-6 pb-2 bg-gray-100 dark:bg-[#1a1d23] text-gray-800 dark:text-white border-b border-red-300 dark:border-slate-100 focus:outline-none"
                   required
                 />
                 <label
                   htmlFor="message"
                   className={`absolute left-4 transition-all duration-200 text-red-700 font-medium pointer-events-none ${
-                    focusField === "message"
+                    focusField === "message" || message.length > 0
                       ? "top-2 text-sm"
                       : "top-4 text-base"
                   }`}
@@ -156,23 +173,24 @@ const Contact = () => {
                 </label>
               </div>
 
-                            <button
-                                type="submit"
-                                className="w-full px-6 py-3 bg-[#b61924] text-white rounded-lg hover:bg-red-800 focus:outline-none focus:ring-2 focus:ring-black"
-                            >
-                                Send Message
-                            </button>
-                        </form>
-                    </motion.div>
-                    <motion.div
-                        initial={{ opacity: 0, x: 50 }}
-                        whileInView={{ opacity: 1, x: 0 }}
-                        transition={{ duration: 0.5, delay: 0.4 }}
-                        viewport={{ once: true }}
-                    >
-                        <img className='h-40 md:h-64' src={'/mailbox.png'} alt="" />
-                    </motion.div>
-                </div>
+              <button
+                type="submit"
+                className="w-full px-6 py-3 bg-[#b61924] text-white rounded-lg hover:bg-red-800 focus:outline-none focus:ring-2 focus:ring-black"
+              >
+                Send Message
+              </button>
+            </form>
+          </motion.div>
+
+          <motion.div
+            initial={{ opacity: 0, x: 50 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            transition={{ duration: 0.5, delay: 0.4 }}
+            viewport={{ once: true }}
+          >
+            <img className="h-40 md:h-64" src="/mailbox.png" alt="mailbox" />
+          </motion.div>
+        </div>
 
         {/* Additional Contact Info */}
         <motion.div
@@ -187,7 +205,7 @@ const Contact = () => {
           </h3>
           <div className="mt-4 flex justify-center space-x-6">
             <a
-              href="mailto:mailto:your.email@example.com"
+              href="mailto:your.email@example.com"
               target="_blank"
               rel="noopener noreferrer"
               className="transition-transform duration-200 hover:scale-110 text-red-700 hover:text-red-800"

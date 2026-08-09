@@ -1,5 +1,5 @@
 import { motion } from "framer-motion";
-import { FaArrowUpRightFromSquare, FaArrowRight } from "react-icons/fa6";
+import { FaArrowUpRightFromSquare } from "react-icons/fa6";
 import { GoRepo } from "react-icons/go";
 
 const projects = [
@@ -48,7 +48,7 @@ const projects = [
 
 const Projects = () => {
   return (
-    <section className="pt-32 mb-20 lg:h-screen">
+    <section className="pt-32 mb-20">
       <div className="container mx-auto">
         <motion.h2
           initial={{ opacity: 0, x: -50 }}
@@ -72,7 +72,7 @@ const Projects = () => {
           </span>
         </motion.p>
         {/* Projects Container */}
-        <div className="mt-16 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 px-4">
+        <div className="mt-16 grid grid-cols-1 md:grid-cols-2 gap-10 px-4">
           {projects.map((project, index) => (
             <div
               key={index}
@@ -82,6 +82,7 @@ const Projects = () => {
                 initial={{ opacity: 0, y: 50 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.5, delay: index * 0.2 }}
+                viewport={{ once: true }}
                 className="bg-gray-100 dark:bg-[#1a1d23] p-6 rounded-lg shadow-lg shadow-red-300 dark:shadow-gray-400 md:h-full flex flex-col justify-between"
               >
                 {/* Image Container */}

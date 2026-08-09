@@ -1,6 +1,6 @@
-import React, { useState } from 'react';
-import { motion } from 'framer-motion';
-import { Link } from 'react-router-dom';
+import { motion } from "framer-motion";
+import { useState } from "react";
+import { Link } from "react-router-dom";
 
 const About = () => {
   const [cursorPosition, setCursorPosition] = useState({ x: 0, y: 0 });
@@ -23,7 +23,7 @@ const About = () => {
   };
 
   return (
-    <section className="container mx-auto px-6 lg:flex lg:justify-between gap-5 lg:items-center lg:mt-40 lg:mb-20">
+    <section className=" mx-auto px-6 lg:flex lg:justify-between gap-20 lg:items-center lg:mb-20">
       {/* About */}
       <div className="max-w-3xl py-52 text-center lg:text-left ">
         <motion.h2
@@ -36,7 +36,7 @@ const About = () => {
           About Me
         </motion.h2>
         {/* Image container for mobile*/}
-        <div className="mt-10 mx-auto w-3/5 md:hidden">
+        <div className="mt-10 mx-auto w-3/5 lg:hidden">
           <div className="relative">
             {/* image */}
             <motion.img
@@ -57,10 +57,23 @@ const About = () => {
           viewport={{ once: true }}
           className="mt-6 md:text-justify lg:text-2xl text-gray-600 dark:text-gray-200 max-w-4xl mx-auto"
         >
-          Hey, I'm <span className='text-red-700 font-semibold'>Rafiul Islam Sameer</span>, a front-end developer with a passion for crafting beautiful and functional web experiences. I enjoy turning ideas into reality and making websites that are smooth and user-friendly.
+          Hey, I'm{" "}
+          <span className="text-red-700 font-semibold">
+            Rafiul Islam Sameer
+          </span>
+          , a front-end developer with a passion for crafting beautiful and
+          functional web experiences. I enjoy turning ideas into reality and
+          making websites that are smooth and user-friendly.
           <br />
           <br />
-          When I'm not busy coding, you'll find me <span className='text-red-700 font-semibold'>exploring my love for art</span> or <span className='text-red-700 font-semibold'>traveling to exciting places.</span>
+          When I'm not busy coding, you'll find me{" "}
+          <span className="text-red-700 font-semibold">
+            exploring my love for art
+          </span>{" "}
+          or{" "}
+          <span className="text-red-700 font-semibold">
+            traveling to exciting places.
+          </span>
         </motion.p>
         <motion.div
           initial={{ opacity: 0, y: 50 }}
@@ -82,10 +95,10 @@ const About = () => {
             Contact Me
           </Link>
         </motion.div>
-      </div >
+      </div>
       {/* Image container for desktop */}
       <div
-        className="hidden md:block w-2/5 "
+        className="hidden lg:block w-2/5 "
         onMouseMove={handleMouseMove}
         onMouseEnter={handleMouseEnter}
         onMouseLeave={handleMouseLeave}
@@ -109,17 +122,17 @@ const About = () => {
               style={{
                 left: `${cursorPosition.x - 75}px`,
                 top: `${cursorPosition.y - 75}px`,
-                width: '200px',
-                height: '200px',
-                borderRadius: '50%',
-                background: 'white',
-                mixBlendMode: 'hue',
+                width: "200px",
+                height: "200px",
+                borderRadius: "50%",
+                background: "white",
+                mixBlendMode: "hue",
               }}
             />
           )}
         </div>
       </div>
-    </section >
+    </section>
   );
 };
 

@@ -1,12 +1,11 @@
-import React from "react";
 import { motion } from "framer-motion";
 import {
-  FaHtml5,
   FaCss3Alt,
-  FaJs,
-  FaReact,
-  FaNodeJs,
   FaGitAlt,
+  FaHtml5,
+  FaJs,
+  FaNodeJs,
+  FaReact,
 } from "react-icons/fa";
 import expressjs_icon from "../assets/expressjs_icon.png";
 import Tailwind_icon from "../assets/Tailwind_CSS_Logo.png";
@@ -65,8 +64,8 @@ const skills = [
 
 const Skill = () => {
   return (
-    <section className="px-10 lg:px-0 flex justify-center items-center mt-40 mb-52 lg:mt-0 lg:mb-0 lg:h-screen">
-      <div className="mx-auto lg:flex justify-between items-center gap-10">
+    <section className="px-10 flex justify-center items-center mt-40 mb-52 lg:mt-10 lg:mb-0 lg:h-screen">
+      <div className="mx-auto lg:flex justify-between items-center ">
         <div className="lg:w-1/3">
           <motion.h2
             initial={{ opacity: 0, x: -50 }}

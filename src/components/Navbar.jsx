@@ -142,7 +142,7 @@ const Navbar = ({ theme, toggleTheme }) => {
             initial={{ opacity: 0, y: -20 }}
             animate={{ opacity: 1, y: 0 }}
             exit={{ opacity: 0, y: -20 }}
-            className="md:hidden flex flex-col items-center absolute top-17 right-0 bg-black/50 dark:bg-gray-500/30 backdrop-blur-lg shadow-lg rounded-md py-4"
+            className="md:hidden flex flex-col items-center absolute top-20 right-0 bg-black/50 dark:bg-gray-500/30 backdrop-blur-lg shadow-lg rounded-md py-4"
           >
             {navLinks.map(({ path, label }, index) => (
               <NavLink

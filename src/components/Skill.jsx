@@ -94,14 +94,14 @@ const Skill = () => {
           {skills.map((skill, index) => (
             <div
               key={index}
-              className="transition-transform duration-200 hover:scale-110"
+              className="transition-all duration-300 hover:-translate-y-2 hover:scale-105 ease-in-out"
             >
               <motion.div
                 initial={{ opacity: 0, y: 50 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.5, delay: index * 0.2 }}
                 viewport={{ once: true }}
-                className="bg-gray-100 dark:bg-[#1a1d23] p-3 md:p-6 rounded-lg shadow-lg shadow-red-300 dark:shadow-gray-400"
+                className="bg-gray-100 dark:bg-[#1a1d23] p-3 md:p-6 rounded-lg shadow-lg shadow-red-300 dark:shadow-gray-400 border-2 hover:border-2 hover:border-red-700 "
               >
                 <motion.div
                   animate={{ y: [0, 10, 0] }}
@@ -111,7 +111,7 @@ const Skill = () => {
                 >
                   {skill.icon}
                 </motion.div>
-                <h3 className="mt-4 text-lg font-bold text-gray-800 dark:text-white">
+                <h3 className="mt-4 text-sm md:text-lg font-bold text-gray-800 dark:text-white">
                   {skill.name}
                 </h3>
                 <div className="mt-4">

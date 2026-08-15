@@ -7,12 +7,13 @@ const projects = [
     image: "/Flavors-of-india.jpg",
     title: "Flavors of India",
     description:
-      "Flavors of India is a React-based web app showcasing India’s diverse cuisine.",
+      "A recipe discovery website showcasing popular Indian chefs and their signature recipes. Users can explore recipes, mark their favorites, and access their saved recipes from a dedicated Favorite Recipes page. Favorite recipes are persisted using the browser’s Local Storage, allowing saved recipes to remain available between sessions.",
     links: {
       live: "https://flavors-of-india-d6dbf.web.app/",
       github: "https://github.com/Rafiulsam/flavors-of-india-client",
       server: "https://github.com/Rafiulsam/Flavors_of_india_server",
     },
+    technologies: ["React.js", "Node.js", "Express.js", "Tailwind CSS"],
   },
   {
     image: "/Rest-countries.jpg",
@@ -23,6 +24,14 @@ const projects = [
       live: "https://around-the-w0rld.netlify.app/",
       github: "https://github.com/Rafiulsam/around-the-world",
     },
+    technologies: [
+      "React.js",
+      "React Router",
+      "REST API",
+      "Framer Motion",
+      "Leaflet Maps",
+      "Tailwind CSS",
+    ],
   },
   {
     image: "/BookNest.jpg",
@@ -33,6 +42,7 @@ const projects = [
       live: "https://booknest768.netlify.app/",
       github: "https://github.com/Rafiulsam/BookNest-react-route",
     },
+    technologies: ["React.js", "React Router", "REST API", "Tailwind CSS"],
   },
   {
     image: "/portfolio.jpg",
@@ -43,6 +53,7 @@ const projects = [
       live: "https://noveranikkon.netlify.app/",
       github: "https://github.com/Rafiulsam/novera_portfolio",
     },
+    technologies: ["React.js", "React Router", "Framer Motion", "Tailwind CSS"],
   },
 ];
 
@@ -76,14 +87,14 @@ const Projects = () => {
           {projects.map((project, index) => (
             <div
               key={index}
-              className="transition-transform duration-200 md:hover:scale-105"
+              className="transition-all duration-300 hover:-translate-y-2 rounded-lg ease-in-out"
             >
               <motion.div
                 initial={{ opacity: 0, y: 50 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.5, delay: index * 0.2 }}
                 viewport={{ once: true }}
-                className="bg-gray-100 dark:bg-[#1a1d23] p-6 rounded-lg shadow-lg shadow-red-300 dark:shadow-gray-400 md:h-full flex flex-col justify-between"
+                className="bg-gray-100 dark:bg-[#1a1d23] p-6 rounded-lg shadow-lg shadow-red-300 dark:shadow-gray-400 md:h-full flex flex-col justify-between border-2 hover:border-2 hover:border-red-700"
               >
                 {/* Image Container */}
                 <div className="relative w-full mb-2">
@@ -106,10 +117,19 @@ const Projects = () => {
                 <h3 className="text-lg md:text-xl font-bold text-gray-800 dark:text-white">
                   {project.title}
                 </h3>
+                <div class="mt-6 mb-3 flex flex-wrap gap-2">
+                  {project.technologies.map((tech, index) => (
+                    <span
+                      class="rounded-full border border-red-700 px-2 py-1 text-xs text-red-700"
+                      key={index}
+                    >
+                      {tech}
+                    </span>
+                  ))}
+                </div>
                 <p className="text-sm mt-2 text-gray-600 dark:text-slate-300">
                   {project.description}
                 </p>
-
                 {/* Links */}
                 <div className="flex flex-col space-y-3 mt-4 md:space-y-0 md:space-x-4 md:flex-row">
                   <a

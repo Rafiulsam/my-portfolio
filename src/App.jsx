@@ -1,19 +1,19 @@
-import React, { Suspense, lazy } from 'react';
-import { Routes, Route, useLocation } from 'react-router-dom';
-import Navbar from './components/Navbar';
-import Footer from './components/Footer';
-import ScrollToTop from './components/ScrollToTop';
-import Loader from './components/Loader';
-import ErrorPage from './components/ErrorPage';
-import { ToastContainer, Zoom } from 'react-toastify';
+import { Suspense, lazy } from "react";
+import { Route, Routes, useLocation } from "react-router-dom";
+import { ToastContainer, Zoom } from "react-toastify";
+import ErrorPage from "./components/ErrorPage";
+import Footer from "./components/Footer";
+import Loader from "./components/Loader";
+import Navbar from "./components/Navbar";
+import ScrollToTop from "./components/ScrollToTop";
 import useTheme from "./hooks/useTheme";
 
 // Lazy loading components
-const Home = lazy(() => import('./components/Home'));
-const About = lazy(() => import('./components/About'));
-const Projects = lazy(() => import('./components/Projects'));
-const Contact = lazy(() => import('./components/Contact'));
-const Skill = lazy(() => import('./components/Skill'));
+const Home = lazy(() => import("./components/Home"));
+const About = lazy(() => import("./components/About"));
+const Projects = lazy(() => import("./components/Projects"));
+const Contact = lazy(() => import("./components/Contact"));
+const Skill = lazy(() => import("./components/Skill"));
 
 function App() {
   const path = useLocation();
@@ -27,10 +27,10 @@ function App() {
   return (
     <div>
       <Suspense fallback={<Loader />}>
-        {!hideLayout && <Navbar theme={theme} toggleTheme={toggleTheme}/>}
+        {!hideLayout && <Navbar theme={theme} toggleTheme={toggleTheme} />}
         <main>
           <Routes>
-            <Route path="/" element={<Home theme={theme}/>} />
+            <Route path="/" element={<Home theme={theme} />} />
             <Route path="/about" element={<About />} />
             <Route path="/skills" element={<Skill />} />
             <Route path="/projects" element={<Projects />} />
@@ -41,7 +41,7 @@ function App() {
         {!hideLayout && <Footer />}
       </Suspense>
       <ScrollToTop />
-      
+
       {/* Toast Container */}
       <ToastContainer
         position="top-center"
@@ -56,7 +56,7 @@ function App() {
         theme="light"
         transition={Zoom}
       />
-    </div >
+    </div>
   );
 }
 
